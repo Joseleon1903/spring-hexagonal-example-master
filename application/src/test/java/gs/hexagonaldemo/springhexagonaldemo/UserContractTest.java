@@ -2,7 +2,6 @@ package gs.hexagonaldemo.springhexagonaldemo;
 
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
 import gs.hexagonaldemo.springhexagonaldemo.helper.JsonValidator;
-import gs.hexagonaldemo.springhexagonaldemo.models.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

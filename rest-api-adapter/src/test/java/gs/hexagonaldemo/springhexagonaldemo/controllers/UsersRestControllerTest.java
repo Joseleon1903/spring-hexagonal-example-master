@@ -1,9 +1,5 @@
 package gs.hexagonaldemo.springhexagonaldemo.controllers;
 
-import gs.hexagonaldemo.springhexagonaldemo.controllers.UsersRestController;
-import gs.hexagonaldemo.springhexagonaldemo.models.User;
-import gs.hexagonaldemo.springhexagonaldemo.ports.AddUserService;
-import gs.hexagonaldemo.springhexagonaldemo.ports.GetUserService;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
