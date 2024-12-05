@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class MotivoEstadoRestController {
 
@@ -23,6 +25,15 @@ public class MotivoEstadoRestController {
         System.out.println("Entring id: "+id);
         Long motivoId = Long.parseLong(id);
         MotivoEstado motivo  = motivoEstadoES.buscarMotivoEstadoPorId(motivoId).get();
+        //MotivoEstado motivo = new MotivoEstado(1L,"ejemplo", true, 1L, "AC" );
+        return ResponseEntity.ok(motivo);
+
+    }
+
+    @GetMapping(value = "/motivoEstado/{estado}")
+    public ResponseEntity<List<MotivoEstado>> getMotivoEstadoByEstado(@PathVariable("estado") String estado) {
+        System.out.println("Entring id: "+estado);
+        List<MotivoEstado> motivo  = motivoEstadoES.buscarMotivosEstado(estado).get();
         //MotivoEstado motivo = new MotivoEstado(1L,"ejemplo", true, 1L, "AC" );
         return ResponseEntity.ok(motivo);
 

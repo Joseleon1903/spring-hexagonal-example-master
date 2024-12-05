@@ -18,11 +18,7 @@ public interface EjecucionIntercambioInformacionES {
      * La Capacidad guarda en el repositorio de ejecuci�n de intercambio de Informaci�n un registro nuevo,
      * provisto por parametro; y retorna el ID del nuevo registro guardado de ejecuci�n de intercambio de informaci�n
      *
-     * @param ejecucionIntercambioInformacion
-     * @return
-     * @throws ServicesFault
      */
-
     EjecucionIntercambioInformacion registrarEjecucionIntercambioInformacion(
             EjecucionIntercambioInformacion parameters)
             throws InternalServiceException;
@@ -35,9 +31,6 @@ public interface EjecucionIntercambioInformacionES {
      * en el objeto proporcionado; y retorna una respuesta booleana indicando si fue actualizado (true) o no
      * se pudo actualizar (false)
      *
-     * @param ejecucionIntercambioInformacion
-     * @return
-     * @throws ServicesFault
      */
 
     public EjecucionIntercambioInformacion actualizarEjecucionIntercambioInformacion( EjecucionIntercambioInformacion parameters)
@@ -104,6 +97,5 @@ public interface EjecucionIntercambioInformacionES {
      */
     public BuscarExcepcionesEjecucionIntercambioInformacionResponseType buscarExcepcionesEjecucionIntercambioInformacion(
             BuscarExcepcionesEjecucionIntercambioInformacionType buscarExcepcionesEjecucionIntercambioInformacionInput)throws InternalServiceException;
-
 
 }

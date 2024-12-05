@@ -25,7 +25,7 @@ public class MotivoEstadoRepositoryAdapter implements MotivoEstadoRepository {
 
     @Override
     public List<MotivoEstado> getList() {
-        return List.of();
+        return null;
     }
 
     @Override

@@ -16,5 +16,5 @@ public interface MotivoEstadoES {
      * @return List<MotivoEstado>
      * @throws InternalServiceException
      */
-    Optional<List<MotivoEstado>> buscarMotivosEstado(String estado) throws InternalServiceException;
+    Optional<List<MotivoEstado>> buscarMotivosEstado(String estado);
 }

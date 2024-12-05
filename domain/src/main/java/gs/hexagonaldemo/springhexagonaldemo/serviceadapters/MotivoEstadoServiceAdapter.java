@@ -1,10 +1,8 @@
 package gs.hexagonaldemo.springhexagonaldemo.serviceadapters;
 
-import gs.hexagonaldemo.springhexagonaldemo.exception.InternalServiceException;
 import gs.hexagonaldemo.springhexagonaldemo.models.MotivoEstado;
 import gs.hexagonaldemo.springhexagonaldemo.ports.MotivoEstadoRepository;
 import gs.hexagonaldemo.springhexagonaldemo.ports.MotivoEstadoES;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -23,7 +21,7 @@ public class MotivoEstadoServiceAdapter implements MotivoEstadoES {
     }
 
     @Override
-    public Optional<List<MotivoEstado>> buscarMotivosEstado(String estado) throws InternalServiceException {
+    public Optional<List<MotivoEstado>> buscarMotivosEstado(String estado){
         return Optional.empty();
     }
 }
