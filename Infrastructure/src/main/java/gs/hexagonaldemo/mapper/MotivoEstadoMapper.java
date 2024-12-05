@@ -5,6 +5,8 @@ import gs.hexagonaldemo.springhexagonaldemo.models.MotivoEstado;
 
 public class MotivoEstadoMapper {
 
+    private MotivoEstadoMapper(){}
+
     public static MotivoEstado mapToDomain(MotivoEstadoEntity motivoEstadoEntity){
 
         return new MotivoEstado(motivoEstadoEntity.getMotivoId(),
