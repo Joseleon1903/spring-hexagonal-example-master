@@ -1,6 +1,5 @@
 package gs.hexagonaldemo.springhexagonaldemo.ports;
 
-import gs.hexagonaldemo.springhexagonaldemo.exception.DatoRequeridoNoProporcionadoException;
 import gs.hexagonaldemo.springhexagonaldemo.exception.InternalServiceException;
 import gs.hexagonaldemo.springhexagonaldemo.models.IntercambioInformacion;
 import gs.hexagonaldemo.springhexagonaldemo.models.ParametroIntercambioInformacion;
