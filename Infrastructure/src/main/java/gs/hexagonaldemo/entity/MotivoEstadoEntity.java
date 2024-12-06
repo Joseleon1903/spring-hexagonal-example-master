@@ -8,10 +8,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "MOTIVO_ESTADO")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity(name = "MOTIVO_ESTADO")
+
 public class MotivoEstadoEntity {
 
     @Id

@@ -11,7 +11,7 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Entity(name = "Agente")
 @Table(name = "AGENTE")
 @NamedQueries({
         @NamedQuery(name = "Agente.findAll", query = "SELECT a FROM Agente a"),

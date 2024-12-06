@@ -22,6 +22,6 @@ public class MotivoEstadoServiceAdapter implements MotivoEstadoES {
 
     @Override
     public Optional<List<MotivoEstado>> buscarMotivosEstado(String estado){
-        return Optional.empty();
+        return Optional.of(motivoEstadoRepository.buscarMotivosEstado(estado));
     }
 }

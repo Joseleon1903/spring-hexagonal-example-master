@@ -1,9 +1,14 @@
 package gs.hexagonaldemo.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
-@Access(AccessType.PROPERTY)
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity(name ="TipoEventoSistema" )
 @Table(name = "TIPO_EVENTO_SISTEMA")
 @NamedQueries({
         @NamedQuery(name = "TipoEventoSistema.findAll", query = "SELECT t FROM TipoEventoSistema t"),

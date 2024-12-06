@@ -42,4 +42,12 @@ public class MotivoEstadoRepositoryAdapter implements MotivoEstadoRepository {
         MotivoEstadoEntity motivo = motivoEstadoRep.getById(motivoId);
         return Optional.of(MotivoEstadoMapper.mapToDomain(motivo));
     }
+
+    @Override
+    public List<MotivoEstado> buscarMotivosEstado(String estado) {
+        System.out.println("entering buscarMotivosEstado");
+        System.out.println("estado: "+estado);
+        List<MotivoEstadoEntity> listMotivo = motivoEstadoRep.findByEstado(estado);
+        return MotivoEstadoMapper.mapListToDomain(listMotivo);
+    }
 }

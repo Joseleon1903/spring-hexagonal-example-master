@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Entity
+@Entity(name = "FechaVigenciaAgente")
 @Table(name = "FECHA_VIGENCIA_AGENTE")
 @NamedQueries({@NamedQuery(name = "FechaVigenciaAgente.findAll" , query = "SELECT f FROM FechaVigenciaAgente f"),
         @NamedQuery(name = "FechaVigenciaAgente.findById" , query = "SELECT f FROM FechaVigenciaAgente f where f.fechaVigenciaAgenteId = :fechaVigenciaAgenteId")})
@@ -28,12 +28,10 @@ public class FechaVigenciaAgenteEntity {
 
     @Basic(optional = false)
     @Column(name = "FECHA_INGRESO" , nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
     private LocalDate fechaIngreso;
 
     @Basic(optional = true)
     @Column(name = "FECHA_SALIDA" , nullable = true)
-    @Temporal(TemporalType.TIMESTAMP)
     private LocalDate fechaSalida;
 
     @ManyToOne(optional = false, cascade = CascadeType.MERGE)

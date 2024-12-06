@@ -12,9 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Entity
+@Entity(name = "ParametroIntercambioInformacion")
 @Table(name ="PARAM_INTERCAMBIO_INFO")
-@Access(AccessType.PROPERTY)
 public class ParametroIntercambioInformacionEntity {
 
     @Id
@@ -53,7 +52,6 @@ public class ParametroIntercambioInformacionEntity {
     private String estado;
 
     @Column(name = "TIPO_REQUERIDO_CONDICIONADO")
-    @Enumerated(EnumType.ORDINAL)
     protected boolean requeridoCondicionado;
 
     @Column(name = "ESTADO")

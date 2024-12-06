@@ -43,7 +43,7 @@ public class OracleConfig {
         factoryBean.setJpaVendorAdapter(vendorAdapter);
 
         Map<String, Object> properties = new HashMap<>();
-        properties.put("hibernate.hbm2ddl.auto", "update");
+        properties.put("hibernate.hbm2ddl.auto", "none ");
         properties.put("hibernate.dialect", "org.hibernate.dialect.OracleDialect");
         properties.put("hibernate.show_sql", "true");
         factoryBean.setJpaPropertyMap(properties);

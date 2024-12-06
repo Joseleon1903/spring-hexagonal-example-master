@@ -25,19 +25,15 @@ public class MotivoEstadoRestController {
         System.out.println("Entring id: "+id);
         Long motivoId = Long.parseLong(id);
         MotivoEstado motivo  = motivoEstadoES.buscarMotivoEstadoPorId(motivoId).get();
-        //MotivoEstado motivo = new MotivoEstado(1L,"ejemplo", true, 1L, "AC" );
         return ResponseEntity.ok(motivo);
-
     }
 
-    @GetMapping(value = "/motivoEstado/{estado}")
+    @GetMapping(value = "/motivoEstado/estado/{estado}")
     public ResponseEntity<List<MotivoEstado>> getMotivoEstadoByEstado(@PathVariable("estado") String estado) {
         System.out.println("Entring id: "+estado);
-        List<MotivoEstado> motivo  = motivoEstadoES.buscarMotivosEstado(estado).get();
-        //MotivoEstado motivo = new MotivoEstado(1L,"ejemplo", true, 1L, "AC" );
-        return ResponseEntity.ok(motivo);
+        List<MotivoEstado> motivos  = motivoEstadoES.buscarMotivosEstado(estado).get();
+        return ResponseEntity.ok(motivos);
 
     }
-
 
 }

@@ -14,4 +14,7 @@ public interface MotivoEstadoRepository {
     void delete(int id);
 
     Optional<MotivoEstado> getById(Long motivoId);
+
+    List<MotivoEstado> buscarMotivosEstado(String estado);
+
 }

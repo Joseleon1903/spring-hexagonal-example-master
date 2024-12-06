@@ -8,9 +8,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Entity(name = "ExcepcionParametroRequeridoIntercambioInformacion")
 @Table(name ="EXCEP_PARAM_REQ_INTER_INFO")
-@Access(AccessType.PROPERTY)
 public class ExcepcionParametroRequeridoIntercambioInformacionEntity {
 
     @Id
