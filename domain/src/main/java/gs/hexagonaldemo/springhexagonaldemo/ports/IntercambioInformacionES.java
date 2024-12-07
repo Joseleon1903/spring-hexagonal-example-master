@@ -14,20 +14,17 @@ public interface IntercambioInformacionES {
      *         com.unipago.suirsigma.commons.intercambioinformaciones.types
      *         .BuscarIntercambioInformacionPorIdResponseType
      * @throws InternalServiceException
-     * @throws DatoRequeridoNoProporcionadoException
      */
-    IntercambioInformacion buscarIntercambioInformacionPorId(Long IntercambioInformacionId) throws InternalServiceException;
+    IntercambioInformacion buscarIntercambioInformacionPorId(Integer IntercambioInformacionId);
 
     /**
      *
      * @return returns
      *         com.unipago.suirsigma.commons.intercambioinformaciones.types
      *         .BuscarIntercambioInformacionPorServicioResponseType
-     * @throws DatoRequeridoNoProporcionadoException
      * @throws InternalServiceException
      */
-    List<IntercambioInformacion> buscarIntercambiosInformacionPorServicio( Integer servicioId,Short tipoIntercambioInformacion,String estado)
-            throws InternalServiceException;
+    List<IntercambioInformacion> buscarIntercambiosInformacionPorServicio( Integer servicioId,Short tipoIntercambioInformacion,String estado);
 
     /**
      *
@@ -37,6 +34,6 @@ public interface IntercambioInformacionES {
      * @throws InternalServiceException
      */
     @Deprecated
-    Boolean validarParametrosEjecucion(List<ParametroIntercambioInformacion> parametros)throws InternalServiceException;
+    Boolean validarParametrosEjecucion(List<ParametroIntercambioInformacion> parametros);
 
 }

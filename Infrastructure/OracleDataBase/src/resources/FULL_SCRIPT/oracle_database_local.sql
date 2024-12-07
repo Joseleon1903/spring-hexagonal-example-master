@@ -1,0 +1,4 @@
+
+
+
+select * from PARAM_INTERCAMBIO_INFO

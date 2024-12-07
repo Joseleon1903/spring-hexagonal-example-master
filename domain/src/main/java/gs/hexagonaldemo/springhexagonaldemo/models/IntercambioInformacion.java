@@ -22,9 +22,9 @@ public class IntercambioInformacion {
     private String rutaServicioTareaEspecifico;
     private Short tipoIntercambioInformacion;
     private Integer entidadRelacionadaId;
-    private boolean validaEjecucionPrevia;
-    protected boolean validaTiempoRetencionInformacion;
-    private boolean asincrono;
+    private Boolean validaEjecucionPrevia;
+    protected Boolean validaTiempoRetencionInformacion;
+    private Boolean asincrono;
     private List<ParametroIntercambioInformacion> parametros;
 
 }

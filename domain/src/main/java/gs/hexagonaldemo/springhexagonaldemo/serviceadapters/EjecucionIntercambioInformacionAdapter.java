@@ -14,32 +14,32 @@ import java.util.List;
 public class EjecucionIntercambioInformacionAdapter  implements EjecucionIntercambioInformacionES {
 
     @Override
-    public EjecucionIntercambioInformacion registrarEjecucionIntercambioInformacion(EjecucionIntercambioInformacion parameters) throws InternalServiceException {
+    public EjecucionIntercambioInformacion registrarEjecucionIntercambioInformacion(EjecucionIntercambioInformacion parameters) {
         return null;
     }
 
     @Override
-    public EjecucionIntercambioInformacion actualizarEjecucionIntercambioInformacion(EjecucionIntercambioInformacion parameters) throws InternalServiceException {
+    public EjecucionIntercambioInformacion actualizarEjecucionIntercambioInformacion(EjecucionIntercambioInformacion parameters) {
         return null;
     }
 
     @Override
-    public EjecucionIntercambioInformacion buscarEjecucionIntercambioInformacionPorId(Long buscarIntercambioInformacionPorId) throws InternalServiceException {
+    public EjecucionIntercambioInformacion buscarEjecucionIntercambioInformacionPorId(Long buscarIntercambioInformacionPorId) {
         return null;
     }
 
     @Override
-    public EjecucionIntercambioInformacion buscarUltimoIntercambioInformacionPorServicio(BuscarUltimoIntercambioInformacionPorServicioType buscarUltimoIntercambioInformacionPorServicioInput) throws InternalServiceException {
+    public EjecucionIntercambioInformacion buscarUltimoIntercambioInformacionPorServicio(BuscarUltimoIntercambioInformacionPorServicioType buscarUltimoIntercambioInformacionPorServicioInput) {
         return null;
     }
 
     @Override
-    public List<EjecucionIntercambioInformacion> buscarEjecucionesIntercambioInformacionPorServicio(BuscarEjecucionesIntercambioInformacionPorServicioType buscarEjecucionesIntercambioInformacionPorServicioInput) throws InternalServiceException {
+    public List<EjecucionIntercambioInformacion> buscarEjecucionesIntercambioInformacionPorServicio(BuscarEjecucionesIntercambioInformacionPorServicioType buscarEjecucionesIntercambioInformacionPorServicioInput) {
         return Collections.emptyList();
     }
 
     @Override
-    public BuscarExcepcionesEjecucionIntercambioInformacionResponseType buscarExcepcionesEjecucionIntercambioInformacion(BuscarExcepcionesEjecucionIntercambioInformacionType buscarExcepcionesEjecucionIntercambioInformacionInput) throws InternalServiceException {
+    public BuscarExcepcionesEjecucionIntercambioInformacionResponseType buscarExcepcionesEjecucionIntercambioInformacion(BuscarExcepcionesEjecucionIntercambioInformacionType buscarExcepcionesEjecucionIntercambioInformacionInput) {
         return null;
     }
 

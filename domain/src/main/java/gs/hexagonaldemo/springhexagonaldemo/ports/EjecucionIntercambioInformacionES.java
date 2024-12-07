@@ -20,8 +20,7 @@ public interface EjecucionIntercambioInformacionES {
      *
      */
     EjecucionIntercambioInformacion registrarEjecucionIntercambioInformacion(
-            EjecucionIntercambioInformacion parameters)
-            throws InternalServiceException;
+            EjecucionIntercambioInformacion parameters);
 
     /**
      *
@@ -33,8 +32,7 @@ public interface EjecucionIntercambioInformacionES {
      *
      */
 
-    public EjecucionIntercambioInformacion actualizarEjecucionIntercambioInformacion( EjecucionIntercambioInformacion parameters)
-            throws InternalServiceException;
+    public EjecucionIntercambioInformacion actualizarEjecucionIntercambioInformacion( EjecucionIntercambioInformacion parameters);
 
     /**
      *
@@ -43,7 +41,7 @@ public interface EjecucionIntercambioInformacionES {
      * @throws InternalServiceException
      */
     public EjecucionIntercambioInformacion buscarEjecucionIntercambioInformacionPorId(
-            Long buscarIntercambioInformacionPorId) throws InternalServiceException;
+            Long buscarIntercambioInformacionPorId);
 
     /**
      * Permite obtener el �ltimo registro de la ejecuci�n de Intercambio de
@@ -59,11 +57,9 @@ public interface EjecucionIntercambioInformacionES {
      *
      * @param buscarUltimoIntercambioInformacionPorServicioInput
      * @return buscarUltimoIntercambioInformacionPorServicioOutput
-     * @throws InternalServiceException
      */
     public EjecucionIntercambioInformacion buscarUltimoIntercambioInformacionPorServicio(
-            BuscarUltimoIntercambioInformacionPorServicioType buscarUltimoIntercambioInformacionPorServicioInput)
-            throws InternalServiceException;
+            BuscarUltimoIntercambioInformacionPorServicioType buscarUltimoIntercambioInformacionPorServicioInput);
 
     /**
      * Permite obtener las Ejecuciones de Intercambio de Informaci�n para un Servicio en particular y otros datos de manera opcional.
@@ -79,8 +75,7 @@ public interface EjecucionIntercambioInformacionES {
      * @throws InternalServiceException
      */
     public List<EjecucionIntercambioInformacion> buscarEjecucionesIntercambioInformacionPorServicio(
-            BuscarEjecucionesIntercambioInformacionPorServicioType buscarEjecucionesIntercambioInformacionPorServicioInput)
-            throws InternalServiceException;
+            BuscarEjecucionesIntercambioInformacionPorServicioType buscarEjecucionesIntercambioInformacionPorServicioInput);
 
     /*
      * <br/>
@@ -96,6 +91,6 @@ public interface EjecucionIntercambioInformacionES {
      * @throws InternalServiceException
      */
     public BuscarExcepcionesEjecucionIntercambioInformacionResponseType buscarExcepcionesEjecucionIntercambioInformacion(
-            BuscarExcepcionesEjecucionIntercambioInformacionType buscarExcepcionesEjecucionIntercambioInformacionInput)throws InternalServiceException;
+            BuscarExcepcionesEjecucionIntercambioInformacionType buscarExcepcionesEjecucionIntercambioInformacionInput);
 
 }
