@@ -4,7 +4,6 @@ import gs.hexagonaldemo.springhexagonaldemo.models.IntercambioInformacion;
 import gs.hexagonaldemo.springhexagonaldemo.ports.IntercambioInformacionRepository;
 import hexagonaldemo.mapper.IntercambioInformacionMapper;
 import hexagonaldemo.repositories.IntercambioInformacionRep;
-import hexagonaldemo.repositories.MotivoEstadoRep;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

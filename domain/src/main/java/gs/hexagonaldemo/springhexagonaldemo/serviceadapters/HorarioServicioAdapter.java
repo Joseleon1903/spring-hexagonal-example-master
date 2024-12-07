@@ -2,6 +2,7 @@ package gs.hexagonaldemo.springhexagonaldemo.serviceadapters;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.HorarioServicio;
 import gs.hexagonaldemo.springhexagonaldemo.ports.HorarioServicioES;
+import gs.hexagonaldemo.springhexagonaldemo.ports.HorarioServicioRepository;
 import gs.hexagonaldemo.springhexagonaldemo.ports.in.BuscarHorariosServicioPorDatosGeneralesType;
 import gs.hexagonaldemo.springhexagonaldemo.ports.out.BuscarHorariosServicioPorDatosGeneralesResponseType;
 
@@ -9,20 +10,25 @@ import java.time.LocalDate;
 
 public class HorarioServicioAdapter implements HorarioServicioES {
 
+    private HorarioServicioRepository horarioServicioRepository;
+
+    public HorarioServicioAdapter(HorarioServicioRepository horarioServicioRepository) {
+        this.horarioServicioRepository = horarioServicioRepository;
+    }
 
     @Override
     public HorarioServicio registrarHorario(HorarioServicio horarioServicio) {
-        return null;
+        return horarioServicioRepository.registrarHorario(horarioServicio);
     }
 
     @Override
     public Boolean estaServicioDisponible(int servicioId, LocalDate fecha) {
-        return null;
+        return horarioServicioRepository.estaServicioDisponible(servicioId, fecha);
     }
 
     @Override
     public HorarioServicio actualizarHorarioServicio(HorarioServicio actualizarHorarioServicio) {
-        return null;
+        return horarioServicioRepository.actualizarHorario(actualizarHorarioServicio);
     }
 
     @Override
@@ -32,6 +38,6 @@ public class HorarioServicioAdapter implements HorarioServicioES {
 
     @Override
     public HorarioServicio buscarHorarioServicioPorId(Long horarioServicioId) {
-        return null;
+        return horarioServicioRepository.buscarHorarioServicioPorId(horarioServicioId);
     }
 }

@@ -1,13 +1,14 @@
 package gs.hexagonaldemo.springhexagonaldemo.configuration;
 
-import gs.hexagonaldemo.springhexagonaldemo.ports.IntercambioInformacionES;
-import gs.hexagonaldemo.springhexagonaldemo.ports.IntercambioInformacionRepository;
-import gs.hexagonaldemo.springhexagonaldemo.ports.MotivoEstadoES;
-import gs.hexagonaldemo.springhexagonaldemo.ports.MotivoEstadoRepository;
+import gs.hexagonaldemo.springhexagonaldemo.ports.*;
+import gs.hexagonaldemo.springhexagonaldemo.serviceadapters.HorarioServicioAdapter;
 import gs.hexagonaldemo.springhexagonaldemo.serviceadapters.IntercambioInformacionAdapter;
 import gs.hexagonaldemo.springhexagonaldemo.serviceadapters.MotivoEstadoServiceAdapter;
+import gs.hexagonaldemo.springhexagonaldemo.serviceadapters.ParametroServicioAdapter;
+import hexagonaldemo.adapters.HorarioServicioRepositoryAdapter;
 import hexagonaldemo.adapters.IntercambioInformacionRepositoryAdapter;
 import hexagonaldemo.adapters.MotivoEstadoRepositoryAdapter;
+import hexagonaldemo.adapters.ParametroRepositoryAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -34,5 +35,26 @@ public class ApplicationConfiguration {
     public IntercambioInformacionRepository intercambioInformacionRepository() {
         return new IntercambioInformacionRepositoryAdapter();
     }
+
+    @Bean
+    public HorarioServicioES horarioServicioService(HorarioServicioRepository horarioServicioESRepository) {
+        return new HorarioServicioAdapter(horarioServicioESRepository);
+    }
+
+    @Bean
+    public HorarioServicioRepository horarioServicioRepository() {
+        return new HorarioServicioRepositoryAdapter();
+    }
+
+    @Bean
+    public ParametroES ParametroService(ParametroRepository parametroRepository) {
+        return new ParametroServicioAdapter(parametroRepository);
+    }
+
+    @Bean
+    public ParametroRepository ParametroRepository() {
+        return new ParametroRepositoryAdapter();
+    }
+
 
 }

@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 public class MotivoEstadoRestController {
 
-    private MotivoEstadoES motivoEstadoES;
+    private final MotivoEstadoES motivoEstadoES;
 
     @Autowired
     public MotivoEstadoRestController(MotivoEstadoES motivoEstadoES) {
