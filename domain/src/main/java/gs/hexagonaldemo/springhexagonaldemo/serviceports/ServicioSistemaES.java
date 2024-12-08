@@ -5,6 +5,7 @@ import gs.hexagonaldemo.springhexagonaldemo.serviceports.in.BuscarServiciosPorDa
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 public interface ServicioSistemaES {
 
@@ -17,7 +18,7 @@ public interface ServicioSistemaES {
      * datos del servicio obtenido.
      *
      */
-    public ServicioSistema buscarServicioPorProcesoSubproceso(Short procesoId,Integer subProceso);
+    Optional<ServicioSistema> buscarServicioPorProcesoSubproceso(Short procesoId, Integer subProceso);
 
     /**
      * Permite obtener los datos de un servicio utilizando el id enviado como
@@ -28,7 +29,7 @@ public interface ServicioSistemaES {
      * servicio obtenido.
      * @return
      */
-    public ServicioSistema buscarServicioPorId(Integer servicioId);
+    public Optional<ServicioSistema> buscarServicioPorId(Integer servicioId);
 
     /**
      * Permite guardar registro de un servicio del sistema. <br/>
@@ -39,7 +40,7 @@ public interface ServicioSistemaES {
      * cualquier excepción ocurrida en el proceso.
      *
      */
-    public ServicioSistema registrarServicio(ServicioSistema servicioSistema);
+    public Optional<ServicioSistema> registrarServicio(ServicioSistema servicioSistema);
 
     /**
      * Permite obtener un listado de los datos de los servicios. <br/>
@@ -48,7 +49,7 @@ public interface ServicioSistemaES {
      * el listado de los datos de los servicios obtenidos.
      *
      */
-    public Collection<ServicioSistema> buscarServicios();
+    public Optional<Collection<ServicioSistema>> buscarServicios();
 
     /**
      * Permite obtener una lista de sub-servicios en base al servicio padre
@@ -58,7 +59,7 @@ public interface ServicioSistemaES {
      * sistema y retorna una lista de los servicios que coincidan con el ID del
      * Servicio Padre provisto por parámetro.
      */
-    public Collection<ServicioSistema> buscarServiciosPorServicioPadreId(Integer servicioPadreId);
+    public Optional<Collection<ServicioSistema>> buscarServiciosPorServicioPadreId(Integer servicioPadreId);
 
     /**
      * Permite obtener una lista de servicios que coincida con los parámetros
@@ -68,7 +69,7 @@ public interface ServicioSistemaES {
      * sistema y retorna una lista de los servicios que coincidan con todos los
      * criterios provistos por parámetro.
      */
-    public Collection<ServicioSistema> buscarServiciosPorDatosGenerales(
+    public Optional<Collection<ServicioSistema>> buscarServiciosPorDatosGenerales(
             BuscarServiciosPorDatosGeneralesType buscarServiciosPorDatosGeneralesInput);
 
     /**
@@ -79,7 +80,7 @@ public interface ServicioSistemaES {
      * y retorna una lista de los servicios que se encuentren asociados a las Areas de Negocio
      * que guardan relación con el contacto del usuario proporcionado.
      */
-    public Collection<ServicioSistema> buscarServiciosPermitidosPorUsuario(Integer usuarioId,List<Short> tipoServicioId,Short tipoEntidadId,
+    public Optional<Collection<ServicioSistema>> buscarServiciosPermitidosPorUsuario(Integer usuarioId,List<Short> tipoServicioId,Short tipoEntidadId,
                                                                            Integer entidadId,Boolean aplicaGeneracionLote );
 
     /**
@@ -91,7 +92,7 @@ public interface ServicioSistemaES {
      * AC (Activo) y que correspondan al ID de Servicio provisto como parámetro,
      * y retorna la lista de servicios a excluir
      */
-    public List<Integer> buscarServiciosExcluirPorServicio(int servicioId);
+    public Optional<List<Integer>> buscarServiciosExcluirPorServicio(int servicioId);
 
 
 }

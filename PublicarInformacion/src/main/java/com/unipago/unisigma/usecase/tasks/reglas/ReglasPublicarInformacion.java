@@ -1,6 +1,7 @@
 package com.unipago.unisigma.usecase.tasks.reglas;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.BitacoraEvento;
+import gs.hexagonaldemo.springhexagonaldemo.models.ServicioSistema;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.in.GenerarSolicitudNotificacionType;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.in.ParametroGeneracionSolicitudNotificacionType;
 import gs.hexagonaldemo.springhexagonaldemo.utils.ParametrosUSConstantes;
@@ -10,6 +11,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 
 public class ReglasPublicarInformacion extends AbstractReglasIntercambioInformacion {
@@ -92,7 +94,8 @@ public class ReglasPublicarInformacion extends AbstractReglasIntercambioInformac
 	public String obtenerNombreCola()  {
 		System.out.println("Entering");
 		System.out.println("Buscando el nombre de la cola de recibir informacion...");
-		String nombreCola = serviciosContext.getServicioES().buscarServicioPorId(ParametrosUSConstantes.Servicios.PUBLICAR_INFORMACION_MASIVA).getNombreCola();
+		Optional<ServicioSistema> servicio = Optional.of(serviciosContext.getServicioES().buscarServicioPorId(ParametrosUSConstantes.Servicios.PUBLICAR_INFORMACION_MASIVA).get());
+		String nombreCola = servicio.get().getNombreCola();
 		System.out.println("Se obtuvo el nombre: " + nombreCola);
 		System.out.println("Exiting");
 		return nombreCola;

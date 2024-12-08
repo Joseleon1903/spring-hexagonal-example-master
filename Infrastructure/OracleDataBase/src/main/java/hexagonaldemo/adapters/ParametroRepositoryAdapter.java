@@ -14,7 +14,6 @@ public class ParametroRepositoryAdapter implements ParametroRepository {
     @Autowired
     private ParametroRep parametroRep;
 
-
     @Override
     public Parametro findById(String parametroId) {
         ParametroEntity param = parametroRep.findById(parametroId).get();

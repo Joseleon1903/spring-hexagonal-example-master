@@ -9,38 +9,44 @@ import com.unipago.unisigma.usecase.tasks.util.Proceso;
 import com.unipago.unisigma.usecase.tasks.util.PublicarInformacionFactory;
 import gs.hexagonaldemo.springhexagonaldemo.exception.InternalServiceException;
 import gs.hexagonaldemo.springhexagonaldemo.models.PublicarInformacion;
+import gs.hexagonaldemo.springhexagonaldemo.models.ServicioSistema;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.*;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Optional;
 
 
 public class PublicarInformacionTSImpl implements PublicarInformacionTS{
 
-	@Autowired
 	private IntercambioInformacionES intercambioInformacionES;
 
-	@Autowired
 	private EjecucionIntercambioInformacionES ejecucionIntercambioInformacionES;
 
-	@Autowired
 	private SolicitudServicioES solicitudServicioES;
 
-	@Autowired
 	private ServicioSistemaES servicioES;
 
-	@Autowired
 	private BitacoraEventoES bitacoraEventoUS;
 
-	@Autowired
 	private NotificacionES notificacionUS;
 
-	@Autowired
 	private ParametroES parametroES;
 
-	@Autowired
 	private MotivoEstadoES motivoEstadoES;
 
-	@Autowired
 	private UsuarioES usuarioES;
+
+	public PublicarInformacionTSImpl(IntercambioInformacionES intercambioInformacionES, EjecucionIntercambioInformacionES ejecucionIntercambioInformacionES, SolicitudServicioES solicitudServicioES, ServicioSistemaES servicioES, BitacoraEventoES bitacoraEventoUS, NotificacionES notificacionUS, ParametroES parametroES, MotivoEstadoES motivoEstadoES, UsuarioES usuarioES) {
+		this.intercambioInformacionES = intercambioInformacionES;
+		this.ejecucionIntercambioInformacionES = ejecucionIntercambioInformacionES;
+		this.solicitudServicioES = solicitudServicioES;
+		this.servicioES = servicioES;
+		this.bitacoraEventoUS = bitacoraEventoUS;
+		this.notificacionUS = notificacionUS;
+		this.parametroES = parametroES;
+		this.motivoEstadoES = motivoEstadoES;
+		this.usuarioES = usuarioES;
+	}
 
 	@Override
 	public void publicarInformacion(PublicarInformacion solicitud) {
@@ -54,7 +60,10 @@ public class PublicarInformacionTSImpl implements PublicarInformacionTS{
 			
 			System.out.println("Instaciando el contexto de data...");
 			String codigoUsuario = "EPBDTEST";//HandlerChainHelper.obtenerDatosUsuario(sesionContext).getCodigoUsuario();
-			
+
+
+
+
 			ContextData context = new ContextData(new SolicitudIntercambioInformacion(solicitud.getServicioId(), solicitud.getParametrosEjecucion(), codigoUsuario));
 			
 			System.out.println("Instanciando el services context...");

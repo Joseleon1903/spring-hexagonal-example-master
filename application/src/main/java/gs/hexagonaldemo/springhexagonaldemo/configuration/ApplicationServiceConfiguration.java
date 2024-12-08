@@ -61,5 +61,15 @@ public class ApplicationServiceConfiguration {
         return new BitacoraEventoRepositoryAdapter();
     }
 
+    @Bean
+    public ServicioSistemaES ServicioSistemaService(ServicioSistemaRepository servicioSistemaRepository) {
+        return new ServicioSistemaServiceAdapter(servicioSistemaRepository);
+    }
+
+    @Bean
+    public ServicioSistemaRepository ServicioSistemaRepository() {
+        return new ServicioSistemaRepositoryAdapter();
+    }
+
 
 }

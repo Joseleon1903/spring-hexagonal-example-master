@@ -29,13 +29,12 @@ public abstract class AbstractReglasIntercambioInformacion implements IReglasInt
         boolean estaCatalogado = false;
 
         System.out.println("Buscando el servicio proporcionado....");
-        ServicioSistema servicioSistema = serviciosContext.getServicioES().buscarServicioPorId(contextData.getSolicitud().getServicioId());
+        ServicioSistema servicioSistema = serviciosContext.getServicioES().buscarServicioPorId(contextData.getSolicitud().getServicioId()).get();
 
         if(servicioSistema.getEstado().equals(ParametrosUSConstantes.Estados.ESTADO_AC)){
             System.out.println("El servicio proporcionado esta catalogado y activo!");
             contextData.setServicioId(servicioSistema.getServicioId());
             estaCatalogado = true;
-
         }
         if(!estaCatalogado){
             System.out.println("El servicio no esta catalogado!");
