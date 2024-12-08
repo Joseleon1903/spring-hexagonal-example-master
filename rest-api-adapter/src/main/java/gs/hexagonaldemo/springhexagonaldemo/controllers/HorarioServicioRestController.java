@@ -1,7 +1,7 @@
 package gs.hexagonaldemo.springhexagonaldemo.controllers;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.HorarioServicio;
-import gs.hexagonaldemo.springhexagonaldemo.ports.HorarioServicioES;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.HorarioServicioES;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

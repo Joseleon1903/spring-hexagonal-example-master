@@ -1,7 +1,7 @@
 package gs.hexagonaldemo.springhexagonaldemo.controllers;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.MotivoEstado;
-import gs.hexagonaldemo.springhexagonaldemo.ports.MotivoEstadoES;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.MotivoEstadoES;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +23,7 @@ public class MotivoEstadoRestController {
     @GetMapping(value = "/motivoEstado/{id}")
     public ResponseEntity<MotivoEstado> getMotivoEstado(@PathVariable("id") String id) {
         System.out.println("Entring id: "+id);
-        Long motivoId = Long.parseLong(id);
+        Integer motivoId = Integer.parseInt(id);
         MotivoEstado motivo  = motivoEstadoES.buscarMotivoEstadoPorId(motivoId).get();
         return ResponseEntity.ok(motivo);
     }

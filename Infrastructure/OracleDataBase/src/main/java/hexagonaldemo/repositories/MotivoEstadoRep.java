@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface MotivoEstadoRep extends JpaRepository<MotivoEstadoEntity, Long> {
+public interface MotivoEstadoRep extends JpaRepository<MotivoEstadoEntity, Integer> {
 
     List<MotivoEstadoEntity> findByEstado(String estado);
 }

@@ -1,7 +1,7 @@
 package hexagonaldemo.adapters;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.BitacoraEvento;
-import gs.hexagonaldemo.springhexagonaldemo.ports.BitacoraEventoRepository;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.BitacoraEventoRepository;
 import hexagonaldemo.entity.BitacoraEventoEntity;
 import hexagonaldemo.mapper.BitacoraEventoMapper;
 import hexagonaldemo.repositories.BitacoraEventoRep;

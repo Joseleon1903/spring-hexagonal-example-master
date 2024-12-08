@@ -1,41 +1,40 @@
 package gs.hexagonaldemo.springhexagonaldemo.serviceadapters;
 
-import gs.hexagonaldemo.springhexagonaldemo.exception.InternalServiceException;
 import gs.hexagonaldemo.springhexagonaldemo.models.EjecucionIntercambioInformacion;
-import gs.hexagonaldemo.springhexagonaldemo.ports.EjecucionIntercambioInformacionES;
-import gs.hexagonaldemo.springhexagonaldemo.ports.in.BuscarEjecucionesIntercambioInformacionPorServicioType;
-import gs.hexagonaldemo.springhexagonaldemo.ports.in.BuscarExcepcionesEjecucionIntercambioInformacionType;
-import gs.hexagonaldemo.springhexagonaldemo.ports.in.BuscarUltimoIntercambioInformacionPorServicioType;
-import gs.hexagonaldemo.springhexagonaldemo.ports.out.BuscarExcepcionesEjecucionIntercambioInformacionResponseType;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.EjecucionIntercambioInformacionES;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.in.BuscarEjecucionesIntercambioInformacionPorServicioType;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.in.BuscarExcepcionesEjecucionIntercambioInformacionType;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.in.BuscarUltimoIntercambioInformacionPorServicioType;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.BuscarExcepcionesEjecucionIntercambioInformacionResponseType;
 
-import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 public class EjecucionIntercambioInformacionAdapter  implements EjecucionIntercambioInformacionES {
 
     @Override
-    public EjecucionIntercambioInformacion registrarEjecucionIntercambioInformacion(EjecucionIntercambioInformacion parameters) {
-        return null;
+    public Optional<EjecucionIntercambioInformacion> registrarEjecucionIntercambioInformacion(EjecucionIntercambioInformacion parameters) {
+        return  Optional.empty();
     }
 
     @Override
-    public EjecucionIntercambioInformacion actualizarEjecucionIntercambioInformacion(EjecucionIntercambioInformacion parameters) {
-        return null;
+    public Optional<EjecucionIntercambioInformacion> actualizarEjecucionIntercambioInformacion(EjecucionIntercambioInformacion parameters) {
+        return  Optional.empty();
     }
 
     @Override
-    public EjecucionIntercambioInformacion buscarEjecucionIntercambioInformacionPorId(Long buscarIntercambioInformacionPorId) {
-        return null;
+    public Optional<EjecucionIntercambioInformacion> buscarEjecucionIntercambioInformacionPorId(Long buscarIntercambioInformacionPorId) {
+        return  Optional.empty();
     }
 
     @Override
-    public EjecucionIntercambioInformacion buscarUltimoIntercambioInformacionPorServicio(BuscarUltimoIntercambioInformacionPorServicioType buscarUltimoIntercambioInformacionPorServicioInput) {
-        return null;
+    public Optional<EjecucionIntercambioInformacion> buscarUltimoIntercambioInformacionPorServicio(BuscarUltimoIntercambioInformacionPorServicioType buscarUltimoIntercambioInformacionPorServicioInput) {
+        return Optional.empty();
     }
 
     @Override
-    public List<EjecucionIntercambioInformacion> buscarEjecucionesIntercambioInformacionPorServicio(BuscarEjecucionesIntercambioInformacionPorServicioType buscarEjecucionesIntercambioInformacionPorServicioInput) {
-        return Collections.emptyList();
+    public Optional<List<EjecucionIntercambioInformacion>> buscarEjecucionesIntercambioInformacionPorServicio(BuscarEjecucionesIntercambioInformacionPorServicioType buscarEjecucionesIntercambioInformacionPorServicioInput) {
+        return Optional.empty();
     }
 
     @Override

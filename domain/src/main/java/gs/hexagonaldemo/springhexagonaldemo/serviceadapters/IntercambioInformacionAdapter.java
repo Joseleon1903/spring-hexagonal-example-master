@@ -1,16 +1,12 @@
 package gs.hexagonaldemo.springhexagonaldemo.serviceadapters;
 
-import gs.hexagonaldemo.springhexagonaldemo.exception.InternalServiceException;
 import gs.hexagonaldemo.springhexagonaldemo.models.IntercambioInformacion;
-import gs.hexagonaldemo.springhexagonaldemo.models.MotivoEstado;
 import gs.hexagonaldemo.springhexagonaldemo.models.ParametroIntercambioInformacion;
-import gs.hexagonaldemo.springhexagonaldemo.ports.IntercambioInformacionES;
-import gs.hexagonaldemo.springhexagonaldemo.ports.IntercambioInformacionRepository;
-import gs.hexagonaldemo.springhexagonaldemo.ports.MotivoEstadoRepository;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.IntercambioInformacionES;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.IntercambioInformacionRepository;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 public class IntercambioInformacionAdapter implements IntercambioInformacionES {
 

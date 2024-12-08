@@ -4,7 +4,7 @@ import hexagonaldemo.entity.MotivoEstadoEntity;
 import hexagonaldemo.mapper.MotivoEstadoMapper;
 import hexagonaldemo.repositories.MotivoEstadoRep;
 import gs.hexagonaldemo.springhexagonaldemo.models.MotivoEstado;
-import gs.hexagonaldemo.springhexagonaldemo.ports.MotivoEstadoRepository;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.MotivoEstadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -34,7 +34,7 @@ public class MotivoEstadoRepositoryAdapter implements MotivoEstadoRepository {
     }
 
     @Override
-    public Optional<MotivoEstado> getById(Long motivoId) {
+    public Optional<MotivoEstado> getById(Integer motivoId) {
         System.out.println("entering getById");
         System.out.println("motivoId: "+motivoId);
 

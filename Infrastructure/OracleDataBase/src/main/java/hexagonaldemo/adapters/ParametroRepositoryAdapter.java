@@ -1,7 +1,7 @@
 package hexagonaldemo.adapters;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.Parametro;
-import gs.hexagonaldemo.springhexagonaldemo.ports.ParametroRepository;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.ParametroRepository;
 import hexagonaldemo.entity.ParametroEntity;
 import hexagonaldemo.mapper.ParametroMapper;
 import hexagonaldemo.repositories.ParametroRep;

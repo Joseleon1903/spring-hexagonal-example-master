@@ -1,7 +1,7 @@
 package hexagonaldemo.adapters;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.IntercambioInformacion;
-import gs.hexagonaldemo.springhexagonaldemo.ports.IntercambioInformacionRepository;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.IntercambioInformacionRepository;
 import hexagonaldemo.mapper.IntercambioInformacionMapper;
 import hexagonaldemo.repositories.IntercambioInformacionRep;
 import org.springframework.beans.factory.annotation.Autowired;

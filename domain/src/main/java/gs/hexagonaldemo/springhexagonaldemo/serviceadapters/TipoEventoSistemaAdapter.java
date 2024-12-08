@@ -2,7 +2,7 @@ package gs.hexagonaldemo.springhexagonaldemo.serviceadapters;
 
 import gs.hexagonaldemo.springhexagonaldemo.exception.InternalServiceException;
 import gs.hexagonaldemo.springhexagonaldemo.models.TipoEventoSistema;
-import gs.hexagonaldemo.springhexagonaldemo.ports.TipoEventoSistemaES;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.TipoEventoSistemaES;
 
 public class TipoEventoSistemaAdapter implements TipoEventoSistemaES {
 

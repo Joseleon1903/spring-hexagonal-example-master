@@ -16,7 +16,7 @@ public class MotivoEstadoEntity {
 
     @Id
     @Column(name = "MOTIVO_ID")
-    private Long motivoId;
+    private Integer motivoId;
 
     @Column(name = "DESCRIPCION")
     private String descripcion;

@@ -2,8 +2,8 @@ package gs.hexagonaldemo.springhexagonaldemo.serviceadapters;
 
 import gs.hexagonaldemo.springhexagonaldemo.exception.InternalServiceException;
 import gs.hexagonaldemo.springhexagonaldemo.models.Agente;
-import gs.hexagonaldemo.springhexagonaldemo.ports.AgenteES;
-import gs.hexagonaldemo.springhexagonaldemo.ports.in.*;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.AgenteES;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.in.*;
 
 import java.util.Collections;
 import java.util.List;

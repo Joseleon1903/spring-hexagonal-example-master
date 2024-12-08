@@ -1,12 +1,12 @@
 package gs.hexagonaldemo.springhexagonaldemo.controllers;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.BitacoraEvento;
-import gs.hexagonaldemo.springhexagonaldemo.models.MotivoEstado;
-import gs.hexagonaldemo.springhexagonaldemo.ports.BitacoraEventoES;
-import gs.hexagonaldemo.springhexagonaldemo.ports.HorarioServicioES;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.BitacoraEventoES;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BitacoraEventoRestController {

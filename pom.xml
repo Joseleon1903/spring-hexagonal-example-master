@@ -30,6 +30,7 @@
 		<module>application</module>
 		<module>Infrastructure</module>
         <module>Infrastructure/OracleDataBase</module>
+        <module>PublicarInformacion</module>
     </modules>
 
 </project>

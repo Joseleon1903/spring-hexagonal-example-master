@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class MotivoEstado {
 
-    private Long motivoId;
+    private Integer motivoId;
 
     private String descripcion;
 

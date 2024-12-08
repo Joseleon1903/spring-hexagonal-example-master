@@ -1,6 +1,6 @@
 package gs.hexagonaldemo.springhexagonaldemo.serviceadapters;
 
-import gs.hexagonaldemo.springhexagonaldemo.ports.MotivoEstadoRepository;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.MotivoEstadoRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -29,7 +29,7 @@ public class MotivoEstadoServiceAdapterTest {
     @Test
     public void buscarUsuarioPorId_testCase() {
 
-        Long motivoId = 1607L;
+        Integer motivoId = 1607;
         when(motivoEstadoRepository.getById(motivoId)).thenReturn(notNull());
 
         motivoEstadoServiceAdapter.buscarMotivoEstadoPorId(motivoId);

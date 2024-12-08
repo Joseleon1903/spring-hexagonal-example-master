@@ -1,8 +1,8 @@
 package gs.hexagonaldemo.springhexagonaldemo.serviceadapters;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.Parametro;
-import gs.hexagonaldemo.springhexagonaldemo.ports.ParametroES;
-import gs.hexagonaldemo.springhexagonaldemo.ports.ParametroRepository;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.ParametroES;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.ParametroRepository;
 
 public class ParametroServicioAdapter implements ParametroES {
 

@@ -1,10 +1,10 @@
 package gs.hexagonaldemo.springhexagonaldemo.serviceadapters;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.HorarioServicio;
-import gs.hexagonaldemo.springhexagonaldemo.ports.HorarioServicioES;
-import gs.hexagonaldemo.springhexagonaldemo.ports.HorarioServicioRepository;
-import gs.hexagonaldemo.springhexagonaldemo.ports.in.BuscarHorariosServicioPorDatosGeneralesType;
-import gs.hexagonaldemo.springhexagonaldemo.ports.out.BuscarHorariosServicioPorDatosGeneralesResponseType;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.HorarioServicioRepository;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.in.BuscarHorariosServicioPorDatosGeneralesType;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.BuscarHorariosServicioPorDatosGeneralesResponseType;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.HorarioServicioES;
 
 import java.time.LocalDate;
 

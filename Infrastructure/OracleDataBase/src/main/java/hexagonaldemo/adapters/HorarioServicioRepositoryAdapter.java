@@ -1,7 +1,7 @@
 package hexagonaldemo.adapters;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.HorarioServicio;
-import gs.hexagonaldemo.springhexagonaldemo.ports.HorarioServicioRepository;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.HorarioServicioRepository;
 import hexagonaldemo.entity.HorarioServicioEntity;
 import hexagonaldemo.mapper.HorarioServicioMapper;
 import hexagonaldemo.repositories.HorarioServicioRep;

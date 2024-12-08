@@ -1,8 +1,8 @@
 package gs.hexagonaldemo.springhexagonaldemo.serviceadapters;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.MotivoEstado;
-import gs.hexagonaldemo.springhexagonaldemo.ports.MotivoEstadoRepository;
-import gs.hexagonaldemo.springhexagonaldemo.ports.MotivoEstadoES;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.MotivoEstadoRepository;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.MotivoEstadoES;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +16,7 @@ public class MotivoEstadoServiceAdapter implements MotivoEstadoES {
     }
 
     @Override
-    public Optional<MotivoEstado> buscarMotivoEstadoPorId(Long id) {
+    public Optional<MotivoEstado> buscarMotivoEstadoPorId(Integer id) {
         return motivoEstadoRepository.getById(id);
     }
 
