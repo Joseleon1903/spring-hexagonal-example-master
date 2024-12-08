@@ -1,14 +1,8 @@
 package gs.hexagonaldemo.springhexagonaldemo.configuration;
 
 import gs.hexagonaldemo.springhexagonaldemo.ports.*;
-import gs.hexagonaldemo.springhexagonaldemo.serviceadapters.HorarioServicioAdapter;
-import gs.hexagonaldemo.springhexagonaldemo.serviceadapters.IntercambioInformacionAdapter;
-import gs.hexagonaldemo.springhexagonaldemo.serviceadapters.MotivoEstadoServiceAdapter;
-import gs.hexagonaldemo.springhexagonaldemo.serviceadapters.ParametroServicioAdapter;
-import hexagonaldemo.adapters.HorarioServicioRepositoryAdapter;
-import hexagonaldemo.adapters.IntercambioInformacionRepositoryAdapter;
-import hexagonaldemo.adapters.MotivoEstadoRepositoryAdapter;
-import hexagonaldemo.adapters.ParametroRepositoryAdapter;
+import gs.hexagonaldemo.springhexagonaldemo.serviceadapters.*;
+import hexagonaldemo.adapters.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -54,6 +48,17 @@ public class ApplicationConfiguration {
     @Bean
     public ParametroRepository ParametroRepository() {
         return new ParametroRepositoryAdapter();
+    }
+
+
+    @Bean
+    public BitacoraEventoES bitacoraEventoService(BitacoraEventoRepository bitacoraEventoRepository) {
+        return new BitacoraEventoServiceAdapter(bitacoraEventoRepository);
+    }
+
+    @Bean
+    public BitacoraEventoRepository bitacoraEventoRepository() {
+        return new BitacoraEventoRepositoryAdapter();
     }
 
 

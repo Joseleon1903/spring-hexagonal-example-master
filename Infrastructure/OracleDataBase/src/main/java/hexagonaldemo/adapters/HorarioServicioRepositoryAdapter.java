@@ -16,7 +16,6 @@ public class HorarioServicioRepositoryAdapter implements HorarioServicioReposito
     @Autowired
     private HorarioServicioRep horarioServicioRep;
 
-
     @Override
     public HorarioServicio registrarHorario(HorarioServicio horarioServicio) {
         HorarioServicioEntity hora = horarioServicioRep.save(HorarioServicioMapper.mapToEntity(horarioServicio));
