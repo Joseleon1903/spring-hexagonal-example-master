@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface MotivoEstadoRepository {
 
-    int create(MotivoEstado motivoEstado);
+    MotivoEstado create(MotivoEstado motivoEstado);
 
     List<MotivoEstado> getList();
 

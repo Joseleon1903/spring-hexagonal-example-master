@@ -38,13 +38,14 @@ public class PublicarInformacionServicePortAdapter implements PublicarInformacio
     @Autowired
     private UsuarioES usuarioES;
 
-    private PublicarInformacionTS publicarInformacionTS =
-            new PublicarInformacionTSImpl(intercambioInformacionES,ejecucionIntercambioInformacionES,
-                    solicitudServicioES,servicioES,bitacoraEventoUS,notificacionUS,parametroES,motivoEstadoES,usuarioES);
 
     @Override
     public void publicarInformacion(PublicarInformacion solicitud) {
         System.out.println("Entering in publicarInformacion");
+
+        PublicarInformacionTS publicarInformacionTS = new PublicarInformacionTSImpl(intercambioInformacionES,ejecucionIntercambioInformacionES,
+                        solicitudServicioES,servicioES,bitacoraEventoUS,notificacionUS,parametroES,motivoEstadoES,usuarioES);
+
         publicarInformacionTS.publicarInformacion(solicitud);
         System.out.println("Exiting in publicarInformacion");
     }

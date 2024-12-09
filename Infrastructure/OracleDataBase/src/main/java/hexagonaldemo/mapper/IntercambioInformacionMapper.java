@@ -32,6 +32,29 @@ public class IntercambioInformacionMapper {
         return inter;
     }
 
+    public static IntercambioInformacionEntity mapToDomain(IntercambioInformacion intercambioInformacionEntity){
+
+        IntercambioInformacionEntity inter =  new IntercambioInformacionEntity();
+
+        inter.setIntercambioInformacionId(intercambioInformacionEntity.getIntercambioInformacionId());
+        inter.setDescripcion(intercambioInformacionEntity.getDescripcion());
+        inter.setEstado(intercambioInformacionEntity.getEstado());
+        inter.setNombre(intercambioInformacionEntity.getNombre());
+        inter.setEsquema(intercambioInformacionEntity.getEsquema());
+        inter.setProcedimiento(intercambioInformacionEntity.getProcedimiento());
+        inter.setServicioId(intercambioInformacionEntity.getServicioId());
+        inter.setServicioEnvioId(intercambioInformacionEntity.getServicioEnvioId());
+        inter.setRutaServicioTareaEspecifico(intercambioInformacionEntity.getRutaServicioTareaEspecifico());
+        inter.setTipoIntercambioInformacion(intercambioInformacionEntity.getTipoIntercambioInformacion());
+        inter.setEntidadRelacionadaId(intercambioInformacionEntity.getEntidadRelacionadaId());
+        inter.setValidaEjecucionPrevia(intercambioInformacionEntity.getValidaEjecucionPrevia());
+        inter.setValidaTiempoRetencionInformacion(intercambioInformacionEntity.getValidaTiempoRetencionInformacion());
+        inter.setAsincrono(intercambioInformacionEntity.getAsincrono());
+        //inter.setParametros(intercambioInformacionEntity.getParametros());
+
+        return inter;
+    }
+
     public static List<IntercambioInformacion> mapListToDomain(List<IntercambioInformacionEntity> intercambioInformacionEntityList){
 
         List<IntercambioInformacion> listOut =  new ArrayList<>();

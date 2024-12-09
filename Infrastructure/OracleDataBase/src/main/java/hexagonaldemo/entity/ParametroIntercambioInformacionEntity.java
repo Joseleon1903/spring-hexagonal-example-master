@@ -48,13 +48,14 @@ public class ParametroIntercambioInformacionEntity {
     @Column(name = "REQUERIDO")
     private boolean requerido;
 
-    @Column(name = "REQUERIDO_CONDICIONADO")
+    @Column(name = "ESTADO")
     private String estado;
 
-    @Column(name = "TIPO_REQUERIDO_CONDICIONADO")
+    @Column(name = "REQUERIDO_CONDICIONADO")
     protected boolean requeridoCondicionado;
 
-    @Column(name = "ESTADO")
+
+    @Column(name = "TIPO_REQUERIDO_CONDICIONADO")
     protected TipoCondicionRequeridoEntity tipoCondicionRequerido;
 
     @OneToMany(mappedBy = "parametroIntercambioInformacionId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)

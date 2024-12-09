@@ -15,7 +15,7 @@ public interface UsuarioES {
      * Capacidad que busca un usuario a partir del id ingresado como par�metro.
      *
      */
-    Optional<Usuario> buscarUsuarioPorId(Long usuarioId);
+    Optional<Usuario> buscarUsuarioPorId(Integer usuarioId);
 
     /**
      * La Capacidad busca en el repositorio de usuario del sistema el usuario asociado al c�digo o

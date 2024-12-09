@@ -1,10 +1,13 @@
 package gs.hexagonaldemo.springhexagonaldemo.configuration;
 
+import gs.hexagonaldemo.springhexagonaldemo.models.EjecucionIntercambioInformacion;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.*;
 import gs.hexagonaldemo.springhexagonaldemo.serviceadapters.*;
 import hexagonaldemo.adapters.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.Optional;
 
 @Configuration
 public class ApplicationServiceConfiguration {
@@ -41,12 +44,12 @@ public class ApplicationServiceConfiguration {
     }
 
     @Bean
-    public ParametroES ParametroService(ParametroRepository parametroRepository) {
+    public ParametroES parametroService(ParametroRepository parametroRepository) {
         return new ParametroServicioAdapter(parametroRepository);
     }
 
     @Bean
-    public ParametroRepository ParametroRepository() {
+    public ParametroRepository parametroRepository() {
         return new ParametroRepositoryAdapter();
     }
 
@@ -62,14 +65,43 @@ public class ApplicationServiceConfiguration {
     }
 
     @Bean
-    public ServicioSistemaES ServicioSistemaService(ServicioSistemaRepository servicioSistemaRepository) {
+    public ServicioSistemaES servicioSistemaService(ServicioSistemaRepository servicioSistemaRepository) {
         return new ServicioSistemaServiceAdapter(servicioSistemaRepository);
     }
 
     @Bean
-    public ServicioSistemaRepository ServicioSistemaRepository() {
+    public ServicioSistemaRepository servicioSistemaRepository() {
         return new ServicioSistemaRepositoryAdapter();
     }
 
+    @Bean
+    public EjecucionIntercambioInformacionES ejecucionIntercambioInformacionService(EjecucionIntercambioInformacionRepository ejecucionIntercambioInformacionRepository) {
+        return new EjecucionIntercambioInformacionAdapter(ejecucionIntercambioInformacionRepository);
+    }
 
+    @Bean
+    public EjecucionIntercambioInformacionRepository ejecucionIntercambioInformacionESRepository() {
+        return new EjecucionIntercambioInformacionRepositoryAdapter();
+    }
+
+    @Bean
+    public SolicitudServicioES solicitudServicioService() {
+        return new SolicitudServicioServiceAdapter();
+    }
+
+    @Bean
+    public NotificacionES notificacionServicioService() {
+        return new NotificacionServiceAdapter();
+    }
+
+
+    @Bean
+    public UsuarioES usuarioServicioService(UsuarioRepository usuarioRepository) {
+        return new UsuarioServiceAdapter(usuarioRepository);
+    }
+
+    @Bean
+    public UsuarioRepository usuarioRepository() {
+        return new UsuarioRepositoryAdapter();
+    }
 }

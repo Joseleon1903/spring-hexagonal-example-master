@@ -2,6 +2,7 @@ package gs.hexagonaldemo.springhexagonaldemo.serviceadapters;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.EjecucionIntercambioInformacion;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.EjecucionIntercambioInformacionES;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.EjecucionIntercambioInformacionRepository;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.in.BuscarEjecucionesIntercambioInformacionPorServicioType;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.in.BuscarExcepcionesEjecucionIntercambioInformacionType;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.in.BuscarUltimoIntercambioInformacionPorServicioType;
@@ -11,6 +12,13 @@ import java.util.List;
 import java.util.Optional;
 
 public class EjecucionIntercambioInformacionAdapter  implements EjecucionIntercambioInformacionES {
+
+
+    private EjecucionIntercambioInformacionRepository ejecucionIntercambioInformacionRepository;
+
+    public EjecucionIntercambioInformacionAdapter(EjecucionIntercambioInformacionRepository ejecucionIntercambioInformacionRepository) {
+        this.ejecucionIntercambioInformacionRepository = ejecucionIntercambioInformacionRepository;
+    }
 
     @Override
     public Optional<EjecucionIntercambioInformacion> registrarEjecucionIntercambioInformacion(EjecucionIntercambioInformacion parameters) {

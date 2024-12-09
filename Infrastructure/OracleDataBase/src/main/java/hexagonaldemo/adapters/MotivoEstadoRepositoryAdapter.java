@@ -19,8 +19,8 @@ public class MotivoEstadoRepositoryAdapter implements MotivoEstadoRepository {
 
 
     @Override
-    public int create(MotivoEstado motivoEstado) {
-        return 0;
+    public MotivoEstado create(MotivoEstado motivoEstado) {
+        return null;
     }
 
     @Override

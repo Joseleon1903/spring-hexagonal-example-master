@@ -16,7 +16,6 @@ import java.util.List;
 @Table(name="INTERCAMBIO_INFORMACION")
 @NamedQueries({
         @NamedQuery(name = IntercambioInformacionEntity.Queries.BUSCAR_POR_SERVICIO_ID , query = "SELECT i FROM IntercambioInformacion i LEFT JOIN FETCH i.parametros WHERE i.servicioId = :servicioId"),
-        //@NamedQuery(name = IntercambioInformacionEntity.Queries.BUSCAR_POR_SERVICIO_ID_TIPO_INTERCAMBIO_ESTADO , query = "SELECT i FROM IntercambioInformacion i LEFT JOIN FETCH i.parametros p WHERE i.servicioId = :servicioId and i.tipoIntercambioInformacion = FUNC('NVL',:tipoIntercambioInformacion, i.tipoIntercambioInformacion) and i.estado = FUNC('NVL',:estado, i.estado) and (p.estado = :estadoParametro or p.estado is null)")
 })
 public class IntercambioInformacionEntity {
 

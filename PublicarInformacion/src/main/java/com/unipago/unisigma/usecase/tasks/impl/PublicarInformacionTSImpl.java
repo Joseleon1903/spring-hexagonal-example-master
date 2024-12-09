@@ -9,11 +9,7 @@ import com.unipago.unisigma.usecase.tasks.util.Proceso;
 import com.unipago.unisigma.usecase.tasks.util.PublicarInformacionFactory;
 import gs.hexagonaldemo.springhexagonaldemo.exception.InternalServiceException;
 import gs.hexagonaldemo.springhexagonaldemo.models.PublicarInformacion;
-import gs.hexagonaldemo.springhexagonaldemo.models.ServicioSistema;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.*;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.Optional;
 
 
 public class PublicarInformacionTSImpl implements PublicarInformacionTS{
@@ -59,8 +55,7 @@ public class PublicarInformacionTSImpl implements PublicarInformacionTS{
 			IProceso proceso = PublicarInformacionFactory.obtenerInstaciaProceso(Proceso.PROCESAR_ENVIO_INFORMACION, PublicarInformacionFactory.obtenerInstaciaReglas());
 			
 			System.out.println("Instaciando el contexto de data...");
-			String codigoUsuario = "EPBDTEST";//HandlerChainHelper.obtenerDatosUsuario(sesionContext).getCodigoUsuario();
-
+			String codigoUsuario = "UNISIGMA";//HandlerChainHelper.obtenerDatosUsuario(sesionContext).getCodigoUsuario();
 
 
 
