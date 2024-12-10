@@ -26,7 +26,7 @@ public class UsuarioServiceAdapter implements UsuarioES {
 
     @Override
     public Optional<Usuario> buscarUsuarioPorCodigo(String codigo, Boolean incluirDatosLDAP) {
-        return Optional.empty();
+        return usuarioRepository.buscarUsuarioPorCodigo(codigo,incluirDatosLDAP);
     }
 
     @Override

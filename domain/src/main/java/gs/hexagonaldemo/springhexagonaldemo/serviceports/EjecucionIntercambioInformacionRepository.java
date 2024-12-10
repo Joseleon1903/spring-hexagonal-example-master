@@ -8,4 +8,6 @@ public interface EjecucionIntercambioInformacionRepository {
 
     Optional<EjecucionIntercambioInformacion> buscarEjecucionIntercambioInformacionPorId(
             Long buscarIntercambioInformacionPorId);
+
+    Optional<EjecucionIntercambioInformacion> registrar(EjecucionIntercambioInformacion parameters);
 }

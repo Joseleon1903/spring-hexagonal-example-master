@@ -8,7 +8,13 @@ public class SolicitudServicioServiceAdapter implements SolicitudServicioES {
 
     @Override
     public SolicitudServicio registrarSolicitudServicio(SolicitudServicio solicitudServicio) {
-        return null;
+        System.out.println("registrarSolicitudServicio");
+
+        System.out.println("solicitudServicio: "+solicitudServicio);
+
+
+        System.out.println("finalizando registro solicitud servicio: ");
+        return solicitudServicio;
     }
 
     @Override

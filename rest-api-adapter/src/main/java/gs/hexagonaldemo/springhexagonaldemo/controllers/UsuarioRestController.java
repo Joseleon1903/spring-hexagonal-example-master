@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UsuarioRestController {
 
-
     private UsuarioES usuarioES;
 
     @Autowired
@@ -27,6 +26,12 @@ public class UsuarioRestController {
         return ResponseEntity.ok(usuario);
     }
 
+    @GetMapping(value = "/usuario/codigo/{codigo}")
+    public ResponseEntity<Usuario> getUsuarioByCodigo(@PathVariable("codigo") String codigo) {
+        System.out.println("Entring codigo: "+codigo);
+        Usuario usuario  = usuarioES.buscarUsuarioPorCodigo(codigo, null).get();
+        return ResponseEntity.ok(usuario);
+    }
 
 
 }

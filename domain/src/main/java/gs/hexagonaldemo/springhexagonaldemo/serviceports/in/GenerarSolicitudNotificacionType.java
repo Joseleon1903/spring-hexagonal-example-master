@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -14,7 +15,7 @@ public class GenerarSolicitudNotificacionType {
     protected int servicioId;
     protected int entidadId;
     protected short tipoNotificacionId;
-    protected List<ParametroGeneracionSolicitudNotificacionType> parametrosSolicitudNotificacion;
-    protected List<DestinatarioSolicitudNotificacionType> destinatarios;
+    protected List<ParametroGeneracionSolicitudNotificacionType> parametrosSolicitudNotificacion= new ArrayList<>();
+    protected List<DestinatarioSolicitudNotificacionType> destinatarios =  new ArrayList<>();
     protected long referenciaId;
 }

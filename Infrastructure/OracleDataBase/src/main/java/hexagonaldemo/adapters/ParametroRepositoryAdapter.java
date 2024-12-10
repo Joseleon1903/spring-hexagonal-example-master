@@ -22,6 +22,6 @@ public class ParametroRepositoryAdapter implements ParametroRepository {
 
     @Override
     public Parametro findValorParametro(String parametroId, Integer entidadId, Integer servicioId) {
-        return parametroRep.findValorParametro(parametroId, entidadId, servicioId);
+        return ParametroMapper.toEntity(parametroRep.findValorParametro(parametroId, entidadId, servicioId));
     }
 }

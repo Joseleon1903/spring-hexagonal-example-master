@@ -17,6 +17,6 @@ public interface UsuarioRepository {
 
     Optional<Usuario> getById(Integer usuarioId);
 
-
+    Optional<Usuario> buscarUsuarioPorCodigo(String codigo, Boolean incluirDatosLDAP);
 
 }

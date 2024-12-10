@@ -7,6 +7,11 @@ public class NotificacionServiceAdapter implements NotificacionES{
 
     @Override
     public void generarSolicitudNotificacion(GenerarSolicitudNotificacionType generarSolicitudNotificacionInput) {
+        System.out.println("Entering generarSolicitudNotificacion");
+
+        System.out.println("generarSolicitudNotificacionInput :"+generarSolicitudNotificacionInput);
+
+        System.out.println("Solicitud notificacion generada con exito.....");
 
     }
 }

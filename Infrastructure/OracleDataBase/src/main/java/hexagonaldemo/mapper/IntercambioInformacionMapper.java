@@ -1,6 +1,7 @@
 package hexagonaldemo.mapper;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.IntercambioInformacion;
+import gs.hexagonaldemo.springhexagonaldemo.models.ParametroIntercambioInformacion;
 import hexagonaldemo.entity.IntercambioInformacionEntity;
 
 import java.util.ArrayList;
@@ -8,31 +9,7 @@ import java.util.List;
 
 public class IntercambioInformacionMapper {
 
-    public static IntercambioInformacion mapToDomain(IntercambioInformacionEntity intercambioInformacionEntity){
-
-        IntercambioInformacion inter =  new IntercambioInformacion();
-
-        inter.setIntercambioInformacionId(intercambioInformacionEntity.getIntercambioInformacionId());
-        inter.setDescripcion(intercambioInformacionEntity.getDescripcion());
-        inter.setEstado(intercambioInformacionEntity.getEstado());
-        inter.setNombre(intercambioInformacionEntity.getNombre());
-        inter.setEsquema(intercambioInformacionEntity.getEsquema());
-        inter.setProcedimiento(intercambioInformacionEntity.getProcedimiento());
-        inter.setServicioId(intercambioInformacionEntity.getServicioId());
-        inter.setServicioEnvioId(intercambioInformacionEntity.getServicioEnvioId());
-        inter.setRutaServicioTareaEspecifico(intercambioInformacionEntity.getRutaServicioTareaEspecifico());
-        inter.setTipoIntercambioInformacion(intercambioInformacionEntity.getTipoIntercambioInformacion());
-        inter.setEntidadRelacionadaId(intercambioInformacionEntity.getEntidadRelacionadaId());
-        inter.setValidaEjecucionPrevia(intercambioInformacionEntity.isValidaEjecucionPrevia());
-        inter.setValidaTiempoRetencionInformacion(intercambioInformacionEntity.isValidaTiempoRetencionInformacion());
-        inter.setAsincrono(intercambioInformacionEntity.isAsincrono());
-        //inter.setParametros(intercambioInformacionEntity.getParametros());
-
-
-        return inter;
-    }
-
-    public static IntercambioInformacionEntity mapToDomain(IntercambioInformacion intercambioInformacionEntity){
+    public static IntercambioInformacionEntity mapToEntity(IntercambioInformacion intercambioInformacionEntity){
 
         IntercambioInformacionEntity inter =  new IntercambioInformacionEntity();
 
@@ -52,6 +29,32 @@ public class IntercambioInformacionMapper {
         inter.setAsincrono(intercambioInformacionEntity.getAsincrono());
         //inter.setParametros(intercambioInformacionEntity.getParametros());
 
+
+        return inter;
+    }
+
+    public static IntercambioInformacion mapToDomain(IntercambioInformacionEntity intercambioInformacionEntity){
+
+        IntercambioInformacion inter =  new IntercambioInformacion();
+
+        inter.setIntercambioInformacionId(intercambioInformacionEntity.getIntercambioInformacionId());
+        inter.setDescripcion(intercambioInformacionEntity.getDescripcion());
+        inter.setEstado(intercambioInformacionEntity.getEstado());
+        inter.setNombre(intercambioInformacionEntity.getNombre());
+        inter.setEsquema(intercambioInformacionEntity.getEsquema());
+        inter.setProcedimiento(intercambioInformacionEntity.getProcedimiento());
+        inter.setServicioId(intercambioInformacionEntity.getServicioId());
+        inter.setServicioEnvioId(intercambioInformacionEntity.getServicioEnvioId());
+        inter.setRutaServicioTareaEspecifico(intercambioInformacionEntity.getRutaServicioTareaEspecifico());
+        inter.setTipoIntercambioInformacion(intercambioInformacionEntity.getTipoIntercambioInformacion());
+        inter.setEntidadRelacionadaId(intercambioInformacionEntity.getEntidadRelacionadaId());
+        inter.setValidaEjecucionPrevia(intercambioInformacionEntity.isValidaEjecucionPrevia());
+        inter.setValidaTiempoRetencionInformacion(intercambioInformacionEntity.isValidaTiempoRetencionInformacion());
+        inter.setAsincrono(intercambioInformacionEntity.isAsincrono());
+        intercambioInformacionEntity.getParametros().forEach( para ->{
+            ParametroIntercambioInformacion ent =  ParametroIntercambioInformacionMapper.mapToDomain(para);
+            inter.getParametros().add(ent);
+        });
         return inter;
     }
 

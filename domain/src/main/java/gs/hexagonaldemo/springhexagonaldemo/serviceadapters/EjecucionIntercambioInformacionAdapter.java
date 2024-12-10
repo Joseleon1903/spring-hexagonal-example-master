@@ -22,7 +22,7 @@ public class EjecucionIntercambioInformacionAdapter  implements EjecucionInterca
 
     @Override
     public Optional<EjecucionIntercambioInformacion> registrarEjecucionIntercambioInformacion(EjecucionIntercambioInformacion parameters) {
-        return  Optional.empty();
+        return  ejecucionIntercambioInformacionRepository.registrar(parameters);
     }
 
     @Override
@@ -32,7 +32,7 @@ public class EjecucionIntercambioInformacionAdapter  implements EjecucionInterca
 
     @Override
     public Optional<EjecucionIntercambioInformacion> buscarEjecucionIntercambioInformacionPorId(Long buscarIntercambioInformacionPorId) {
-        return  Optional.empty();
+        return ejecucionIntercambioInformacionRepository.buscarEjecucionIntercambioInformacionPorId(buscarIntercambioInformacionPorId);
     }
 
     @Override

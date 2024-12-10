@@ -41,8 +41,8 @@ public class EjecucionIntercambioInformacionMapper {
     public static EjecucionIntercambioInformacionEntity mapToEntity(EjecucionIntercambioInformacion type) {
 
         EjecucionIntercambioInformacionEntity eii = new EjecucionIntercambioInformacionEntity();
-        eii.setEjecucionIntercambioInfoId(type.getEjecucionIntercambioInfoId());
-        eii.setIntercambioInformacionId(type.getIntercambioInformacionId() != null ? IntercambioInformacionMapper.mapToDomain(type.getIntercambioInformacionId())  : null);
+        eii.setEjecucionIntercambioInfoId(type.getEjecucionIntercambioInfoId() != null ? type.getEjecucionIntercambioInfoId() : null );
+        eii.setIntercambioInformacionId(type.getIntercambioInformacionId() != null ? IntercambioInformacionMapper.mapToEntity(type.getIntercambioInformacionId())  : null);
         eii.setUsuarioId(type.getUsuarioId());
         eii.setFechaInicio(type.getFechaInicio());
         eii.setFechaFin(type.getFechaFin());
@@ -51,7 +51,13 @@ public class EjecucionIntercambioInformacionMapper {
             List<ParametroEjecucionIntercambioInformacionEntity> parametros = new ArrayList<>();
             for (ParametroEjecucionIntercambioInformacion paramType : type.getParametrosEjecucion()) {
 
-                parametros.add(ParametroEjecucionIntercambioInformacionMapper.mapToEntity(paramType));
+                ParametroEjecucionIntercambioInformacionEntity entityParam = new ParametroEjecucionIntercambioInformacionEntity();
+                entityParam.setParametroEjecucionIntercambioInformacionId(null);
+                entityParam.setEjecucionIntercambioInformacionId(eii);
+                entityParam.setValor(paramType.getValor());
+                entityParam.setParametroIntercambioInformacionId(type.getIntercambioInformacionId() != null ? type.getIntercambioInformacionId().getIntercambioInformacionId() : null);
+                entityParam.setCodigoParametro(paramType.getCodigoParametro());
+                parametros.add(entityParam);
             }
             eii.setParametrosEjecucion(parametros);
         }

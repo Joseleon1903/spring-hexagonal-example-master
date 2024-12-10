@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.Query;
 public interface ParametroRep extends JpaRepository<ParametroEntity, String> {
 
     @Query("SELECT pa FROM Parametro pa WHERE pa.parametroId = :parametroId")
-    Parametro findValorParametro(String parametroId, Integer entidadId, Integer servicioId);
+    ParametroEntity findValorParametro(String parametroId, Integer entidadId, Integer servicioId);
 }

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -66,7 +67,7 @@ public class IntercambioInformacionEntity {
     private boolean asincrono;
 
     @OneToMany(mappedBy = "intercambioInformacionId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<ParametroIntercambioInformacionEntity> parametros;
+    private List<ParametroIntercambioInformacionEntity> parametros = new ArrayList<>();
 
     public static interface Queries {
 

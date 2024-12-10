@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -18,7 +19,7 @@ public class EjecucionIntercambioInformacion {
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
     private LocalDate fechaRespuesta;
-    private List<ParametroEjecucionIntercambioInformacion> parametrosEjecucion;
+    private List<ParametroEjecucionIntercambioInformacion> parametrosEjecucion = new ArrayList<>();
     private List<Integer> entidadesAfectadas;
     private String estado;
     private Integer motivoId;

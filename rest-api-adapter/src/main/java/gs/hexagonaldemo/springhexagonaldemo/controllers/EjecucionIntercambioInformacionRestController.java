@@ -4,9 +4,7 @@ import gs.hexagonaldemo.springhexagonaldemo.models.EjecucionIntercambioInformaci
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.EjecucionIntercambioInformacionES;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class EjecucionIntercambioInformacionRestController {
@@ -23,6 +21,14 @@ public class EjecucionIntercambioInformacionRestController {
         System.out.println("Entring id: "+id);
         Long interId = Long.parseLong(id);
         EjecucionIntercambioInformacion intercambios  = ejecucionIntercambioInformacionES.buscarEjecucionIntercambioInformacionPorId(interId).get();
+        return ResponseEntity.ok(intercambios);
+    }
+
+    @PostMapping(value = "/ejecucionIntercambioInformacion")
+    public ResponseEntity<EjecucionIntercambioInformacion> createEjecucionIntercambioInf(@RequestBody EjecucionIntercambioInformacion ejecucionIntercambioInformacion) {
+        System.out.println("Entring ejecucionIntercambioInformacion: "+ejecucionIntercambioInformacion);
+        EjecucionIntercambioInformacion intercambios  = ejecucionIntercambioInformacionES.registrarEjecucionIntercambioInformacion(
+                ejecucionIntercambioInformacion).get();
         return ResponseEntity.ok(intercambios);
     }
 

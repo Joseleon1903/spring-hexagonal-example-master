@@ -38,4 +38,9 @@ public class UsuarioRepositoryAdapter implements UsuarioRepository {
     public Optional<Usuario> getById(Integer usuarioId) {
         return Optional.of(UsuarioMapper.mapToDomain(usuarioRep.getById(usuarioId)));
     }
+
+    @Override
+    public Optional<Usuario> buscarUsuarioPorCodigo(String codigo, Boolean incluirDatosLDAP) {
+        return Optional.of(UsuarioMapper.mapToDomain(usuarioRep.BuscarUsuarioPorCodigo(codigo).get()));
+    }
 }

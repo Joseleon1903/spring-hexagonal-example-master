@@ -10,7 +10,7 @@ public class ParametroEjecucionIntercambioInformacionMapper {
     public static ParametroEjecucionIntercambioInformacion mapToDomain(ParametroEjecucionIntercambioInformacionEntity type) {
 
         ParametroEjecucionIntercambioInformacion param = new ParametroEjecucionIntercambioInformacion();
-        param.setEjecucionIntercambioInformacionId(EjecucionIntercambioInformacionMapper.mapToDomain(type.getEjecucionIntercambioInformacionId()));
+        //param.setEjecucionIntercambioInformacionId(EjecucionIntercambioInformacionMapper.mapToDomain(type.getEjecucionIntercambioInformacionId()));
         param.setParametroEjecucionIntercambioInformacionId(type.getParametroEjecucionIntercambioInformacionId());
         param.setValor(type.getValor());
         param.setCodigoParametro(type.getCodigoParametro());

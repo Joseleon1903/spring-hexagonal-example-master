@@ -23,8 +23,8 @@ public class EjecucionIntercambioInformacionEntity {
     @Id
     @Basic(optional = false)
     @Column(name = "EJECUCION_INTERCAMBIO_INFO_ID", nullable = false)
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "EJECUCION_INTERCAMBIO_INFO_SEQ")
-//    @SequenceGenerator(name = "EJECUCION_INTERCAMBIO_INFO_SEQ", sequenceName = "EJECUCION_INTERCAMBIO_INFO_SEQ", allocationSize = 1, initialValue = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "EJECUCION_INTERCAMBIO_INFO_SEQ")
+    @SequenceGenerator(name = "EJECUCION_INTERCAMBIO_INFO_SEQ", sequenceName = "EJECUCION_INTERCAMBIO_INFO_SEQ", allocationSize = 1)
     private Long ejecucionIntercambioInfoId;
 
     @ManyToOne
@@ -46,7 +46,7 @@ public class EjecucionIntercambioInformacionEntity {
     @Column(name = "FECHA_RESPUESTA")
     private LocalDate fechaRespuesta;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "ejecucionIntercambioInformacionId")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "ejecucionIntercambioInformacionId")
     private List<ParametroEjecucionIntercambioInformacionEntity> parametrosEjecucion;
 
     @ElementCollection(fetch = FetchType.EAGER)
@@ -58,8 +58,7 @@ public class EjecucionIntercambioInformacionEntity {
     @Column(name = "ESTADO", nullable = false)
     private String estado;
 
-    @Basic(optional = false)
-    @Column(name = "MOTIVO_ID", nullable = false)
+    @Column(name = "MOTIVO_ID")
     private Integer motivoId;
 
     @Column(name = "CODIGO_SERVICIO")

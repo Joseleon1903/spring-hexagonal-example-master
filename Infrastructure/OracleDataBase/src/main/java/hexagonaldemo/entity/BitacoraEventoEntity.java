@@ -21,23 +21,20 @@ public class BitacoraEventoEntity {
     @Id
     @Basic(optional = false)
     @Column(name = "EVENTO_ID", nullable = false)
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BITACORA_EVENTO_SEQ")
-//    @SequenceGenerator(name = "BITACORA_EVENTO_SEQ", sequenceName = "BITACORA_EVENTO_SEQ", allocationSize = 1, initialValue = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BITACORA_EVENTO_SEQ")
+    @SequenceGenerator(name = "BITACORA_EVENTO_SEQ", sequenceName = "BITACORA_EVENTO_SEQ", allocationSize = 1, initialValue = 1)
     private Long bitacoraEventoId;
 
     @Basic(optional = false)
     @Column(name = "DESCRIPCION", nullable = false, length = 4000)
     private String descripcion;
 
-    @Basic(optional = false)
     @Column(name = "DIRECCION_IP", nullable = false, length = 15)
     private String direccionIp;
 
-    @Basic(optional = false)
-    @Column(name = "INSTANCIA_BPEL", nullable = false, length = 10)
+    @Column(name = "INSTANCIA_BPEL", length = 10)
     private Long instanciaBpel;
 
-    @Basic(optional = false)
     @Column(name = "EVENTO_PADRE_ID", nullable = true)
     private Long eventoPadreId;
 
@@ -45,7 +42,6 @@ public class BitacoraEventoEntity {
     @Column(name = "FECHA", nullable = false)
     private LocalDate fecha;
 
-    @Basic(optional = true)
     @Column(name = "SERVICIO_ID")
     private Integer servicioId;
 
