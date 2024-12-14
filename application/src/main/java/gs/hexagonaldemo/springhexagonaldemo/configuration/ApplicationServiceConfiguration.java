@@ -1,13 +1,12 @@
 package gs.hexagonaldemo.springhexagonaldemo.configuration;
 
-import gs.hexagonaldemo.springhexagonaldemo.models.EjecucionIntercambioInformacion;
-import gs.hexagonaldemo.springhexagonaldemo.serviceports.*;
+import com.unisigma.rabbit.adapters.RabbitJmsConsumerAdpater;
+import com.unisigma.rabbit.adapters.RabbitJmsProducerAdpater;
 import gs.hexagonaldemo.springhexagonaldemo.serviceadapters.*;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.*;
 import hexagonaldemo.adapters.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.Optional;
 
 @Configuration
 public class ApplicationServiceConfiguration {
@@ -85,8 +84,23 @@ public class ApplicationServiceConfiguration {
     }
 
     @Bean
-    public SolicitudServicioES solicitudServicioService() {
-        return new SolicitudServicioServiceAdapter();
+    public EjecutarProcedimientoJDBCRepository ejecutarProcedimientoJDBCRepositoryService() {
+        return new EjecutarProcedimientoJDBCRepositoryAdapter();
+    }
+
+    @Bean
+    public SolicitudServicioES solicitudServicioService(RabbitJms rabbitJms, EjecutarProcedimientoJDBCRepository ejecutarProcedimientoJDBCRepository) {
+        return new SolicitudServicioServiceAdapter(rabbitJms, ejecutarProcedimientoJDBCRepository);
+    }
+
+    @Bean
+    public RabbitJms rabbitJmsSrvice() {
+        return new RabbitJmsProducerAdpater();
+    }
+
+    @Bean
+    public RabbitJmsConsumer rabbitJmsConsumerSrvice(SolicitudServicioES solicitudServicioES, EjecucionIntercambioInformacionES ejecucionIntercambioInformacionES) {
+        return new RabbitJmsConsumerAdpater(solicitudServicioES, ejecucionIntercambioInformacionES);
     }
 
     @Bean

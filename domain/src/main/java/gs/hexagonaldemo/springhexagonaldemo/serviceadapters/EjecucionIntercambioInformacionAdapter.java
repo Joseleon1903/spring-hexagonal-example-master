@@ -27,7 +27,7 @@ public class EjecucionIntercambioInformacionAdapter  implements EjecucionInterca
 
     @Override
     public Optional<EjecucionIntercambioInformacion> actualizarEjecucionIntercambioInformacion(EjecucionIntercambioInformacion parameters) {
-        return  Optional.empty();
+        return  ejecucionIntercambioInformacionRepository.actualizar(parameters);
     }
 
     @Override

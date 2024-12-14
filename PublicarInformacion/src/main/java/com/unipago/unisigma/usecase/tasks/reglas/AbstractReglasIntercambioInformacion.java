@@ -1,6 +1,10 @@
 package com.unipago.unisigma.usecase.tasks.reglas;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.unipago.unisigma.usecase.tasks.impl.ServiciosContext;
 import com.unipago.unisigma.usecase.tasks.local.IReglasIntercambioInformacion;
 import com.unipago.unisigma.usecase.tasks.proceso.ContextData;
@@ -10,7 +14,6 @@ import gs.hexagonaldemo.springhexagonaldemo.serviceports.in.BuscarEjecucionesInt
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.in.BuscarUltimoIntercambioInformacionPorServicioType;
 import gs.hexagonaldemo.springhexagonaldemo.utils.FechaUtil;
 import gs.hexagonaldemo.springhexagonaldemo.utils.ParametrosUSConstantes;
-import gs.hexagonaldemo.springhexagonaldemo.utils.ParseXML;
 import gs.hexagonaldemo.springhexagonaldemo.utils.ValidationUtil;
 
 import java.time.LocalDate;
@@ -519,15 +522,29 @@ public abstract class AbstractReglasIntercambioInformacion implements IReglasInt
         String nombreCola = null;
         try {
             nombreCola = obtenerNombreCola();
+
+            System.out.println("Convirtiendo la ejecucion de intercambion registrada "+ contextData.getEjecucionIntercambioRegistrada() +" en Json");
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL); // Excluir campos nulos
+            objectMapper.registerModule(new JavaTimeModule());
+            // Convertir el objeto a JSON
+            String mensaje = objectMapper.writeValueAsString(contextData.getEjecucionIntercambioRegistrada());
+
+            // Imprimir el JSON
+            System.out.println(mensaje);
+
+            System.out.println("Publicando informaci�n con ID: " + contextData.getEjecucionIntercambioRegistrada().getEjecucionIntercambioInfoId() + " en la cola: " + nombreCola);
+            serviciosContext.getSolicitudServicioUS().registrarSolicitudServicio(new SolicitudServicio(mensaje, nombreCola, false));
+            System.out.println("Informaci�n con ID: " + contextData.getEjecucionIntercambioRegistrada().getEjecucionIntercambioInfoId() + " publicada exitosamente en la cola: " + nombreCola);
+
         } catch (InternalServiceException e) {
             System.out.println("Error opteniendoo onombre cola..: "+ e.getMessage());
+        } catch (JsonProcessingException e) {
+            System.out.println("Error opteniendoo onombre cola..: "+ e.getMessage());
+            throw new RuntimeException(e);
         }
-        System.out.println("Convirtiendo la ejecucion de intercambion registrada "+ contextData.getEjecucionIntercambioRegistrada() +" en xml");
-        String mensaje = ParseXML.obtenerXMLStringDesdeObjeto(contextData.getEjecucionIntercambioRegistrada());
 
-        System.out.println("Publicando informaci�n con ID: " + contextData.getEjecucionIntercambioRegistrada().getEjecucionIntercambioInfoId() + " en la cola: " + nombreCola);
-        serviciosContext.getSolicitudServicioUS().registrarSolicitudServicio(new SolicitudServicio(mensaje, nombreCola, false));
-        System.out.println("Informaci�n con ID: " + contextData.getEjecucionIntercambioRegistrada().getEjecucionIntercambioInfoId() + " publicada exitosamente en la cola: " + nombreCola);
         return exitoso;
     }
 

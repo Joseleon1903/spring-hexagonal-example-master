@@ -46,7 +46,7 @@ public class EjecucionIntercambioInformacionEntity {
     @Column(name = "FECHA_RESPUESTA")
     private LocalDate fechaRespuesta;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "ejecucionIntercambioInformacionId")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "ejecucionIntercambioInformacionId")
     private List<ParametroEjecucionIntercambioInformacionEntity> parametrosEjecucion;
 
     @ElementCollection(fetch = FetchType.EAGER)
