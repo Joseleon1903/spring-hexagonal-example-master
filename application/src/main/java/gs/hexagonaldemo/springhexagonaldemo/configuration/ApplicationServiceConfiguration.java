@@ -118,4 +118,24 @@ public class ApplicationServiceConfiguration {
     public UsuarioRepository usuarioRepository() {
         return new UsuarioRepositoryAdapter();
     }
+
+    @Bean
+    public EjecucionConsultaES ejecucionConsultaESService(EjecucionConsultaRepository  ejecucionConsultaRepository) {
+        return new EjecucionConsultaServiceAdapter(ejecucionConsultaRepository);
+    }
+
+    @Bean
+    public EjecucionConsultaRepository ejecucionConsultaRepository() {
+        return new EjecucionConsultaRepositoryAdapter();
+    }
+
+    @Bean
+    public CarteraAfiliadoES carteraAfiliadoService(CarteraAfiliadoRepository  carteraAfiliadoRepository) {
+        return new CarteraAfiliadoServiceAdapter(carteraAfiliadoRepository);
+    }
+
+    @Bean
+    public CarteraAfiliadoRepository carteraAfiliadoRepository() {
+        return new CarteraAfiliadoRepositoryAdapter();
+    }
 }
