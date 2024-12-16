@@ -138,4 +138,24 @@ public class ApplicationServiceConfiguration {
     public CarteraAfiliadoRepository carteraAfiliadoRepository() {
         return new CarteraAfiliadoRepositoryAdapter();
     }
+
+    @Bean
+    public TipoEntidadES tipoEntidadService(TipoEntidadRepository  tipoEntidadRepository) {
+        return new TipoEntidadServiceAdapter(tipoEntidadRepository);
+    }
+
+    @Bean
+    public TipoEntidadRepository tipoEntidadRepository() {
+        return new TipoEntidadRepositoryAdapter();
+    }
+
+    @Bean
+    public ContactoES ContactoESService(ContactoRepository contactoRepository) {
+        return new ContactoServiceAdapter(contactoRepository);
+    }
+
+    @Bean
+    public ContactoRepository contactoRepository() {
+        return new ContactoRepositoryAdapter();
+    }
 }

@@ -1,5 +1,6 @@
 package gs.hexagonaldemo.springhexagonaldemo.serviceports.out;
 
+import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.RespuestaPaginacionType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

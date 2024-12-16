@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Optional;
 
-public interface ContactoES {
+public interface ContactoRepository {
 
     /**
      *
@@ -60,8 +60,9 @@ public interface ContactoES {
      *     returns com.unipago.suirsigma.commons.contactoes.types.BuscarContactosPorEntidadFechaResponseType
      */
     Collection<Contacto> buscarContactosPorEntidadFecha(
-             Integer entidadId,
-     LocalDate fechaCreacionInicial,
-    LocalDate fechaCreacionFinal);
+            Integer entidadId,
+            LocalDate fechaCreacionInicial,
+            LocalDate fechaCreacionFinal);
+
 
 }

@@ -27,6 +27,6 @@ public class CarteraAfiliadoServiceAdapter implements CarteraAfiliadoES {
 
     @Override
     public BuscarCarteraAfiliadosPorEntidadPeriodoResponseType buscarCarteraAfiliadosPorEntidadPeriodo(Integer entidadId, Integer periodo, String estadoAfiliacion, Integer indice, Integer cantidadRegistrosParticion) {
-        return null;
+        return carteraAfiliadoRepository.buscarCarteraAfiliadosPorEntidadPeriodo(entidadId, periodo, estadoAfiliacion, indice,cantidadRegistrosParticion);
     }
 }

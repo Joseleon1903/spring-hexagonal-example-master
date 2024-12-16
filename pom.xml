@@ -32,6 +32,7 @@
         <module>Infrastructure/OracleDataBase</module>
         <module>PublicarInformacion</module>
 		<module>Infrastructure/UnisigmaRabbitMq</module>
-	</modules>
+        <module>ConsultarCarteraAfiliadoPorPeriodo</module>
+    </modules>
 
 </project>

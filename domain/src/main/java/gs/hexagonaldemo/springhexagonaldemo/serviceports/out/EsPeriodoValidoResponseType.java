@@ -9,9 +9,10 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class RespuestaPaginacionType {
+public class EsPeriodoValidoResponseType {
 
-    protected Integer indice;
-    protected Long registrosRestantes;
+    protected boolean esPeriodoValido;
+    protected Integer motivoInvalido;
+
 
 }

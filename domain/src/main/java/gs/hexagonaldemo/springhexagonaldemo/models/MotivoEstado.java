@@ -19,6 +19,15 @@ public class MotivoEstado {
 
     private String estado;
 
+    public MotivoEstado(int codigo, String descripcion) {
+        this.motivoId = codigo;
+        this.descripcion = descripcion;
+    }
+
+    public MotivoEstado(int motivoId) {
+        this.motivoId = motivoId;
+    }
+
     @Override
     public String toString() {
         return "MotivoEstado{" +
