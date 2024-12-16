@@ -62,7 +62,7 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSImpl {
 		try {
 
 			usuarioId = usuarioES.buscarUsuarioPorCodigo(datosUsuario, null).get().getUsuarioId();
-			entidad = contactoES.buscarEntidadContactoPorCodigoUsuario(datosUsuario);
+			entidad = contactoES.buscarEntidadContactoPorCodigoUsuario(datosUsuario).get();
 			seguroId = tipoEntidadES.buscarTipoEntidadPorId(entidad.getTipoEntidadId()).get().getSeguroId();
 
 			if (ValidationUtil.validateNotNull(consultarCarteraAfiliadoPorPeriodoInput)
