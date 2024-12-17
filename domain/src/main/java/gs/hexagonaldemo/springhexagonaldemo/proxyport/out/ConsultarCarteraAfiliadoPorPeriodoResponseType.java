@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -11,7 +12,7 @@ import java.util.List;
 @Data
 public class ConsultarCarteraAfiliadoPorPeriodoResponseType {
 
-    private List<RespuestaCarteraAfiliadoType> respuestaCarteraAfiliados;
+    private List<RespuestaCarteraAfiliadoType> respuestaCarteraAfiliados = new ArrayList<>();
     private RespuestaPaginacionType registrosRestantes;
 
 }

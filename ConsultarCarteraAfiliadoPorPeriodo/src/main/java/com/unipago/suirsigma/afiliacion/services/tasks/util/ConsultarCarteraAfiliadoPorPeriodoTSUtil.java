@@ -12,6 +12,7 @@ import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.DetalleCarteraAfili
 import gs.hexagonaldemo.springhexagonaldemo.utils.ParametrosUSConstantes;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -61,9 +62,10 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSUtil {
 		return Boolean.TRUE;
 	}
 
-	public void registrarEjecucionConsulta(Integer usuarioId, LocalDate fechaInicio , LocalDate fechaFin, Integer entidadId, int servicioId, Integer periodo, Integer indice, String estadoAfiliacion, List<MotivoEstado> listaMotivoEstado) {
+	public void registrarEjecucionConsulta(Integer usuarioId, LocalDateTime fechaInicio , LocalDateTime fechaFin, Integer entidadId, int servicioId, Integer periodo, Integer indice, String estadoAfiliacion, List<MotivoEstado> listaMotivoEstado) {
 		
 		String criterios = "{ periodo: " + periodo + ", estadoAfiliacion: " + estadoAfiliacion + ", indice: " + indice + " }";
+		System.out.println("criterios: "+criterios);
 		EjecucionConsulta ejecucionConsulta = new EjecucionConsulta(null, entidadId, usuarioId,servicioId, fechaInicio,
 				 fechaFin, criterios,
 				(listaMotivoEstado != null && listaMotivoEstado.isEmpty()) ?

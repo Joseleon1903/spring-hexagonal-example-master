@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,10 +34,10 @@ public class EjecucionConsultaEntity {
     private Integer servicioId;
 
     @Column(name="FECHA", nullable=false)
-    private LocalDate fecha;
+    private LocalDateTime fecha;
 
     @Column(name="FECHA_FIN")
-    private LocalDate fechaFin;
+    private LocalDateTime fechaFin;
 
     @Column(name="CRITERIOS", nullable=false)
     private String criterios;

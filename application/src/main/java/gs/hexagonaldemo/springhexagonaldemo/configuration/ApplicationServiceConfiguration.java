@@ -158,4 +158,14 @@ public class ApplicationServiceConfiguration {
     public ContactoRepository contactoRepository() {
         return new ContactoRepositoryAdapter();
     }
+
+    @Bean
+    public EntidadES EntidadService(EntidadRepository entidadRepository) {
+        return new EntidadServiceAdapater(entidadRepository);
+    }
+
+    @Bean
+    public EntidadRepository EntidadRepository() {
+        return new EntidadRepositoryAdapter();
+    }
 }

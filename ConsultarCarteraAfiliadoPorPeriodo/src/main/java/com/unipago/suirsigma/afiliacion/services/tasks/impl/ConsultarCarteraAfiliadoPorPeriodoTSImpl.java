@@ -14,6 +14,7 @@ import gs.hexagonaldemo.springhexagonaldemo.utils.ParametrosUSConstantes;
 import gs.hexagonaldemo.springhexagonaldemo.utils.ValidationUtil;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,7 +55,7 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSImpl {
 		Integer cantidadRegistrosParticion = null;
 		System.out.println("Caller Principal: " + datosUsuario);
 		List<MotivoEstado> listaMotivoEstado = new ArrayList<>();
-		LocalDate fechaInicio = LocalDate.now();
+		LocalDateTime fechaInicio = LocalDateTime.now();
 		Integer usuarioId = null;
 		Short seguroId = null;
 
@@ -97,7 +98,7 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSImpl {
 		}finally {
 			ConsultarCarteraAfiliadoPorPeriodoTSUtil
 					.obtenerInstancia(ejecucionConsultaES)
-					.registrarEjecucionConsulta(usuarioId, fechaInicio, LocalDate.now(), entidad.getEntidadId(),
+					.registrarEjecucionConsulta(usuarioId, fechaInicio, LocalDateTime.now(), entidad.getEntidadId(),
 							ParametrosUSConstantes.Servicios.CONSULTAR_CARTERA_DE_AFILIADOS_POR_PERIODO,
 							consultarCarteraAfiliadoPorPeriodoInput.getPeriodo(),
 							consultarCarteraAfiliadoPorPeriodoInput.getIndice(),

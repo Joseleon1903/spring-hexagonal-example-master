@@ -23,7 +23,7 @@ public class ContactoServiceAdapter implements ContactoES {
 
     @Override
     public Optional<Entidad> buscarEntidadContactoPorCodigoUsuario(String codigoUsuario) {
-        return Optional.empty();
+        return contactoRepository.buscarEntidadContactoPorCodigoUsuario(codigoUsuario);
     }
 
     @Override

@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +19,8 @@ public class EjecucionConsulta {
     private Integer entidadId;
     private Integer usuarioId;
     private Integer servicioId;
-    private LocalDate fecha;
-    private LocalDate fechaFin;
+    private LocalDateTime fecha;
+    private LocalDateTime fechaFin;
     private String criterios;
     private String estado;
     private List<Integer> listaMotivoEstado = new ArrayList<>();

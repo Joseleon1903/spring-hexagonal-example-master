@@ -5,6 +5,13 @@ import gs.hexagonaldemo.springhexagonaldemo.models.Entidad;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.ContactoRepository;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.in.BuscarContactosPorDatosGeneralesType;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.DatosContactoType;
+import hexagonaldemo.entity.ContactoEntity;
+import hexagonaldemo.entity.EntidadEntity;
+import hexagonaldemo.mapper.EntidadMapper;
+import hexagonaldemo.repositories.BitacoraEventoRep;
+import hexagonaldemo.repositories.ContactoRep;
+import hexagonaldemo.repositories.EntidadRep;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 import java.util.Collection;
@@ -14,9 +21,18 @@ import java.util.Optional;
 public class ContactoRepositoryAdapter implements ContactoRepository {
 
 
+    @Autowired
+    private ContactoRep contactoRep;
+
+    @Autowired
+    private EntidadRep entidadRep;
+
+
     @Override
     public Optional<Entidad> buscarEntidadContactoPorCodigoUsuario(String codigoUsuario) {
-        return Optional.empty();
+        ContactoEntity contacto = contactoRep.buscarContactoPorCodigoUsuario(codigoUsuario).get();
+        Optional<EntidadEntity> ent = entidadRep.findById(contacto.getEntidadId());
+        return Optional.of(EntidadMapper.toDto(ent.get()));
     }
 
     @Override
