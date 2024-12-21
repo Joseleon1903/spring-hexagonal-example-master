@@ -27,10 +27,12 @@
 	<modules>
 		<module>domain</module>
 		<module>rest-api-adapter</module>
-		<module>in-memory-db-adapter</module>
-		<module>name-verifier-adapter</module>
 		<module>application</module>
 		<module>Infrastructure</module>
-	</modules>
+        <module>Infrastructure/OracleDataBase</module>
+        <module>PublicarInformacion</module>
+		<module>Infrastructure/UnisigmaRabbitMq</module>
+        <module>ConsultarCarteraAfiliadoPorPeriodo</module>
+    </modules>
 
 </project>

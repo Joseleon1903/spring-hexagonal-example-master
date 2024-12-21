@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class MotivoEstado {
 
-    private Long motivoId;
+    private Integer motivoId;
 
     private String descripcion;
 
@@ -18,6 +18,15 @@ public class MotivoEstado {
     private Long servicioPrincipalProcesaId;
 
     private String estado;
+
+    public MotivoEstado(int codigo, String descripcion) {
+        this.motivoId = codigo;
+        this.descripcion = descripcion;
+    }
+
+    public MotivoEstado(int motivoId) {
+        this.motivoId = motivoId;
+    }
 
     @Override
     public String toString() {

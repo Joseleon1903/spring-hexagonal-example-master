@@ -1,6 +1,7 @@
 package gs.hexagonaldemo.springhexagonaldemo.configuration;
 
 import jakarta.persistence.EntityManagerFactory;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +14,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "gs.hexagonaldemo.repositories") // Cambia por el paquete de tus repositorios
+@EnableJpaRepositories(basePackages = "hexagonaldemo.repositories") // Cambia por el paquete de tus repositorios
 public class OracleConfig {
-
 
     @Bean
     public DataSource dataSource() {
@@ -35,15 +35,17 @@ public class OracleConfig {
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean factoryBean = new org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean();
+
         factoryBean.setDataSource(dataSource);
-        factoryBean.setPackagesToScan("gs.hexagonaldemo.entity");
+
+        factoryBean.setPackagesToScan("hexagonaldemo.entity");
 
         org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter vendorAdapter =
                 new org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter();
         factoryBean.setJpaVendorAdapter(vendorAdapter);
 
         Map<String, Object> properties = new HashMap<>();
-        properties.put("hibernate.hbm2ddl.auto", "update");
+        properties.put("hibernate.hbm2ddl.auto", "none ");
         properties.put("hibernate.dialect", "org.hibernate.dialect.OracleDialect");
         properties.put("hibernate.show_sql", "true");
         factoryBean.setJpaPropertyMap(properties);
