@@ -1,8 +1,8 @@
 package com.unipago.suirsigma.afiliacion.services.tasks.impl;
 
-import com.unipago.suirsigma.afiliacion.services.tasks.util.ConsultarCarteraAfiliadoPorPeriodoTSUtil;
 import com.unipago.suirsigma.afiliacion.services.tasks.exception.DatoRequeridoNoProporcionadoException;
 import com.unipago.suirsigma.afiliacion.services.tasks.exception.ServicesFault;
+import com.unipago.suirsigma.afiliacion.services.tasks.util.ConsultarCarteraAfiliadoPorPeriodoTSUtil;
 import gs.hexagonaldemo.springhexagonaldemo.models.Entidad;
 import gs.hexagonaldemo.springhexagonaldemo.models.MotivoEstado;
 import gs.hexagonaldemo.springhexagonaldemo.models.Parametro;
@@ -13,7 +13,6 @@ import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.BuscarCarteraAfilia
 import gs.hexagonaldemo.springhexagonaldemo.utils.ParametrosUSConstantes;
 import gs.hexagonaldemo.springhexagonaldemo.utils.ValidationUtil;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,17 +20,17 @@ import java.util.List;
 
 public class ConsultarCarteraAfiliadoPorPeriodoTSImpl {
 
-	private CarteraAfiliadoES carteraAfiliadoES;	
+	private final CarteraAfiliadoES carteraAfiliadoES;
 	
-	private ParametroES parametroES;
+	private final ParametroES parametroES;
 	
-	private EjecucionConsultaES ejecucionConsultaES;
+	private final EjecucionConsultaES ejecucionConsultaES;
 	
-	private ContactoES contactoES;
+	private final ContactoES contactoES;
 	
-	private UsuarioES usuarioES;
+	private final UsuarioES usuarioES;
 
-	private TipoEntidadES tipoEntidadES;
+	private final TipoEntidadES tipoEntidadES;
 
 
 	public ConsultarCarteraAfiliadoPorPeriodoTSImpl(TipoEntidadES tipoEntidadES, CarteraAfiliadoES carteraAfiliadoES, ContactoES contactoES, EjecucionConsultaES ejecucionConsultaES, ParametroES parametroES, UsuarioES usuarioES) {

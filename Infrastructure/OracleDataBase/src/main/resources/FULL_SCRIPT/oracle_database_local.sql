@@ -7,7 +7,7 @@ select * from DOMINIO_CORREO_ENTIDAD
 
 select * from CONTACTO
 
-select * from ejecucion_consulta order by fecha asc;
+select * from ejecucion_consulta order by fecha desc;
 
 update contacto set entidad_id = 3014
 

@@ -11,7 +11,6 @@ import gs.hexagonaldemo.springhexagonaldemo.serviceports.FechaES;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.DetalleCarteraAfiliadoPeriodoType;
 import gs.hexagonaldemo.springhexagonaldemo.utils.ParametrosUSConstantes;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
