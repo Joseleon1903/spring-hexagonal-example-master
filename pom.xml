@@ -33,6 +33,7 @@
         <module>PublicarInformacion</module>
 		<module>Infrastructure/UnisigmaRabbitMq</module>
         <module>ConsultarCarteraAfiliadoPorPeriodo</module>
+        <module>soap-api-adapter</module>
     </modules>
 
 </project>
