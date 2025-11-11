@@ -27,12 +27,15 @@
 	<modules>
 		<module>domain</module>
 		<module>application</module>
-		<module>application/ConsultarCarteraAfiliadoPorPeriodo</module>
 		<module>application/PublicarInformacion</module>
+		<module>application/ConsultarCarteraAfiliadoPorPeriodo</module>
+
+
 		<module>Infrastructure</module>
         <module>Infrastructure/OracleDataBase</module>
+		<module>Infrastructure/rest-api-adapter</module>
+
 		<module>Infrastructure/UnisigmaRabbitMq</module>
-        <module>soap-api-adapter</module>
     </modules>
 
 </project>

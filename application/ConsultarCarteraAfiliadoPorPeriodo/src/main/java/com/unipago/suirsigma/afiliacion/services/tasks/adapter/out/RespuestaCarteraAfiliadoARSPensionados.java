@@ -32,4 +32,5 @@ public class RespuestaCarteraAfiliadoARSPensionados extends RespuestaCarteraAfil
     private Short tipoAfiliacionId;
     private LocalDate fechaAfiliacion;
     private LocalDate fechaEfectividadAfiliacion;
+
 }

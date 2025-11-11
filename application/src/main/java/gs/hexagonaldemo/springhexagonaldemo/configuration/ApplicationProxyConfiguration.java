@@ -1,5 +1,6 @@
 package gs.hexagonaldemo.springhexagonaldemo.configuration;
 
+
 import com.unipago.suirsigma.afiliacion.services.tasks.adapter.ConsultarCarteraAfiliadoPorPeriodoAdapter;
 import com.unipago.unisigma.usecase.tasks.adapter.PublicarInformacionServicePortAdapter;
 import gs.hexagonaldemo.springhexagonaldemo.proxyport.ConsultarCarteraAfiliadoPorPeriodoPort;

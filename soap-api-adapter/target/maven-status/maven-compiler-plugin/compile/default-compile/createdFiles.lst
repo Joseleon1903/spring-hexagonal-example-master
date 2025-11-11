@@ -1,0 +1,15 @@
+com\unisigma\epbd\consultarcarteraafiliadoperiodo\RespuestaCarteraAfiliadoType.class
+com\howtodoinjava\xml\school\StudentDetailsRequest.class
+com\soap\api\adapter\utils\XMLConversionUtil.class
+com\howtodoinjava\xml\school\StudentDetailsResponse.class
+com\unisigma\epbd\consultarcarteraafiliadoperiodo\package-info.class
+com\unisigma\epbd\consultarcarteraafiliadoperiodo\RespuestaPaginacionType.class
+com\soap\api\adapter\config\SoapContractConfig.class
+com\unisigma\epbd\consultarcarteraafiliadoperiodo\ConsultarCarteraAfiliadoPorPeriodoType.class
+com\soap\api\adapter\endpoints\ConsultaCarteraEndpoint.class
+com\soap\api\adapter\endpoints\StudentEndpoint.class
+com\unisigma\epbd\consultarcarteraafiliadoperiodo\ConsultarCarteraAfiliadoPorPeriodoResponseType.class
+com\howtodoinjava\xml\school\Student.class
+com\unisigma\epbd\consultarcarteraafiliadoperiodo\ObjectFactory.class
+com\howtodoinjava\xml\school\package-info.class
+com\howtodoinjava\xml\school\ObjectFactory.class

@@ -19,4 +19,5 @@ public class RespuestaCarteraAfiliadoAFP extends RespuestaCarteraAfiliado {
     private LocalDate fechaRecepcionSolicitudAfiliacion;
     private Short tipoAfiliacionId;
     private LocalDate fechaAfiliacion;
+
 }

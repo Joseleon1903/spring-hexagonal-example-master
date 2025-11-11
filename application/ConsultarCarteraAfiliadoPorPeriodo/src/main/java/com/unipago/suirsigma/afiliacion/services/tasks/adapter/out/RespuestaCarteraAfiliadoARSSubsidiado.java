@@ -31,4 +31,6 @@ public class RespuestaCarteraAfiliadoARSSubsidiado extends RespuestaCarteraAfili
     private Short tipoAfiliacionId;
     private LocalDate fechaAfiliacion;
     private LocalDate fechaEfectividadAfiliacion;
+
+
 }

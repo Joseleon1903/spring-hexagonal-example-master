@@ -7,9 +7,8 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>ConsultarCarteraAfiliadoPorPeriodo</artifactId>
-    <name>ConsultarCarteraAfiliadoPorPeriodo</name>
-
-
+    <name>Archetype - ConsultarCarteraAfiliadoPorPeriodo</name>
+    <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
             <groupId>gs.hexagonaldemo</groupId>
@@ -23,12 +22,6 @@
             <artifactId>lombok</artifactId>
             <version>1.18.36</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>gs.hexagonaldemo</groupId>
-            <artifactId>soap-api-adapter</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
 
     </dependencies>
