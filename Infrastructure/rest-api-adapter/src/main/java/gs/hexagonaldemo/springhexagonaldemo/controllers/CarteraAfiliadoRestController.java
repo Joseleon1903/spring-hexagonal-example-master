@@ -2,13 +2,13 @@ package gs.hexagonaldemo.springhexagonaldemo.controllers;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.CarteraAfiliado;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.CarteraAfiliadoES;
-import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.BuscarCarteraAfiliadosPorEntidadPeriodoResponseType;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.BuscarCarteraAfiliadosPorEntidadPeriodoResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class CarteraAfiliadoRestController {
+public class  CarteraAfiliadoRestController {
 
     private CarteraAfiliadoES carteraAfiliadoES;
 
@@ -26,11 +26,11 @@ public class CarteraAfiliadoRestController {
     }
 
     @GetMapping(value = "/carteraAfiliado/periodo")
-    public ResponseEntity<BuscarCarteraAfiliadosPorEntidadPeriodoResponseType> createCarteraAfiliado(@RequestParam("entidadId") Integer entidadId,
-                                                                                                     @RequestParam("periodo") Integer periodo,
-                                                                                                     @RequestParam("estadoAfiliacion") String estadoAfiliacion,
-                                                                                                     @RequestParam("indice") Integer indice,
-                                                                                                     @RequestParam("cantidadRegistrosParticion") Integer cantidadRegistrosParticion
+    public ResponseEntity<BuscarCarteraAfiliadosPorEntidadPeriodoResponse> createCarteraAfiliado(@RequestParam("entidadId") Integer entidadId,
+                                                                                                 @RequestParam("periodo") Integer periodo,
+                                                                                                 @RequestParam("estadoAfiliacion") String estadoAfiliacion,
+                                                                                                 @RequestParam("indice") Integer indice,
+                                                                                                 @RequestParam("cantidadRegistrosParticion") Integer cantidadRegistrosParticion
 
 
     ) {
@@ -40,7 +40,7 @@ public class CarteraAfiliadoRestController {
         System.out.println("param indice: "+indice);
         System.out.println("param cantidadRegistrosParticion: "+cantidadRegistrosParticion);
 
-        BuscarCarteraAfiliadosPorEntidadPeriodoResponseType cartera  = carteraAfiliadoES.buscarCarteraAfiliadosPorEntidadPeriodo( entidadId,  periodo,  estadoAfiliacion,
+        BuscarCarteraAfiliadosPorEntidadPeriodoResponse cartera  = carteraAfiliadoES.buscarCarteraAfiliadosPorEntidadPeriodo( entidadId,  periodo,  estadoAfiliacion,
                  indice,  cantidadRegistrosParticion);
         return ResponseEntity.ok(cartera);
     }

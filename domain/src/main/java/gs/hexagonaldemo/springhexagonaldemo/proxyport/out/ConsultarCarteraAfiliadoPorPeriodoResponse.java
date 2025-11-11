@@ -10,9 +10,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ConsultarCarteraAfiliadoPorPeriodoResponseType {
+public class ConsultarCarteraAfiliadoPorPeriodoResponse {
 
-    private List<RespuestaCarteraAfiliadoType> respuestaCarteraAfiliados = new ArrayList<>();
-    private RespuestaPaginacionType registrosRestantes;
+    private List<RespuestaCarteraAfiliado> respuestaCarteraAfiliados = new ArrayList<>();
+    private RespuestaPaginacion registrosRestantes;
 
 }

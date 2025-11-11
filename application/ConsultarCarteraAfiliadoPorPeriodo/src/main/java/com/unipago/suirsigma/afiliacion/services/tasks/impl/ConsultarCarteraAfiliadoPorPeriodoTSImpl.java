@@ -6,10 +6,10 @@ import com.unipago.suirsigma.afiliacion.services.tasks.util.ConsultarCarteraAfil
 import gs.hexagonaldemo.springhexagonaldemo.models.Entidad;
 import gs.hexagonaldemo.springhexagonaldemo.models.MotivoEstado;
 import gs.hexagonaldemo.springhexagonaldemo.models.Parametro;
-import gs.hexagonaldemo.springhexagonaldemo.proxyport.in.ConsultarCarteraAfiliadoPorPeriodoType;
-import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.ConsultarCarteraAfiliadoPorPeriodoResponseType;
+import gs.hexagonaldemo.springhexagonaldemo.proxyport.in.ConsultarCarteraAfiliadoPorPeriodo;
+import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.ConsultarCarteraAfiliadoPorPeriodoResponse;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.*;
-import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.BuscarCarteraAfiliadosPorEntidadPeriodoResponseType;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.BuscarCarteraAfiliadosPorEntidadPeriodoResponse;
 import gs.hexagonaldemo.springhexagonaldemo.utils.ParametrosUSConstantes;
 import gs.hexagonaldemo.springhexagonaldemo.utils.ValidationUtil;
 
@@ -42,8 +42,8 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSImpl {
 		this.tipoEntidadES = tipoEntidadES;
 	}
 
-	public ConsultarCarteraAfiliadoPorPeriodoResponseType consultarCarteraAfiliadoPorPeriodo(
-			ConsultarCarteraAfiliadoPorPeriodoType consultarCarteraAfiliadoPorPeriodoInput) {
+	public ConsultarCarteraAfiliadoPorPeriodoResponse consultarCarteraAfiliadoPorPeriodo(
+			ConsultarCarteraAfiliadoPorPeriodo consultarCarteraAfiliadoPorPeriodoInput) {
 		System.out.println("consultarCarteraAfiliadoPorPeriodo()");
 		System.out.println("consultarCarteraAfiliadoPorPeriodoInput: " + consultarCarteraAfiliadoPorPeriodoInput);
 
@@ -77,8 +77,8 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSImpl {
 			cantidadRegistrosParticion = Integer.valueOf(response.getValor());
 
 
-			ConsultarCarteraAfiliadoPorPeriodoResponseType output = new ConsultarCarteraAfiliadoPorPeriodoResponseType();
-			BuscarCarteraAfiliadosPorEntidadPeriodoResponseType buscarCarteraAfiliadosPorEntidadPeriodoOutput = null;
+			ConsultarCarteraAfiliadoPorPeriodoResponse output = new ConsultarCarteraAfiliadoPorPeriodoResponse();
+			BuscarCarteraAfiliadosPorEntidadPeriodoResponse buscarCarteraAfiliadosPorEntidadPeriodoOutput = null;
 
 
 			buscarCarteraAfiliadosPorEntidadPeriodoOutput = carteraAfiliadoES.buscarCarteraAfiliadosPorEntidadPeriodo(entidad.getEntidadId(), consultarCarteraAfiliadoPorPeriodoInput.getPeriodo(),

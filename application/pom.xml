@@ -54,6 +54,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>com.github.fge</groupId>
             <artifactId>json-schema-validator</artifactId>
@@ -73,22 +74,23 @@
             <scope>compile</scope>
         </dependency>
 
-
-        <dependency>
-            <groupId>gs.hexagonaldemo</groupId>
-            <artifactId>PublicarInformacion</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
         <dependency>
             <groupId>gs.hexagonaldemo</groupId>
             <artifactId>UnisigmaRabbitMq</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>gs.hexagonaldemo</groupId>
             <artifactId>ConsultarCarteraAfiliadoPorPeriodo</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>gs.hexagonaldemo</groupId>
+            <artifactId>PublicarInformacion</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

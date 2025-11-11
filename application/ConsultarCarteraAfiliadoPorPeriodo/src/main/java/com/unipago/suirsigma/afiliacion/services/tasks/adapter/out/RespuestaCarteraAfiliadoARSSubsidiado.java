@@ -1,6 +1,6 @@
 package com.unipago.suirsigma.afiliacion.services.tasks.adapter.out;
 
-import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.RespuestaCarteraAfiliadoType;
+import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.RespuestaCarteraAfiliado;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.ActaNacimientoType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,19 +11,24 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class RespuestaCarteraAfiliadoAEISSType  extends RespuestaCarteraAfiliadoType {
+public class RespuestaCarteraAfiliadoARSSubsidiado extends RespuestaCarteraAfiliado {
 
-    protected LocalDate fechaNacimiento;
-    protected String genero;
+    private LocalDate fechaNacimiento;
+    private String genero;
+    private String tipoAfiliado;
     private String tipoDependiente;
     private Short parentescoId;
+    private String cedula;
     private String nui;
     private ActaNacimientoType actaNacimiento;
+    private Short nacionalidadId;
     private Integer nssTitular;
     private String cedulaTitular;
-    private Short claveEstanciaInfantil;
-    protected Boolean excluirConsolidado;
+    private Long numeroContrato;
+    private Boolean estudiante;
+    private Boolean discapacitado;
     private LocalDate fechaRecepcionSolicitudAfiliacion;
     private Short tipoAfiliacionId;
     private LocalDate fechaAfiliacion;
+    private LocalDate fechaEfectividadAfiliacion;
 }

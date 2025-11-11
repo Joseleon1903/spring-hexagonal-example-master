@@ -5,10 +5,10 @@ import com.unipago.suirsigma.afiliacion.services.tasks.exception.DatoRequeridoNo
 import com.unipago.suirsigma.afiliacion.services.tasks.exception.ServicesFault;
 import gs.hexagonaldemo.springhexagonaldemo.models.EjecucionConsulta;
 import gs.hexagonaldemo.springhexagonaldemo.models.MotivoEstado;
-import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.RespuestaCarteraAfiliadoType;
+import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.RespuestaCarteraAfiliado;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.EjecucionConsultaES;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.FechaES;
-import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.DetalleCarteraAfiliadoPeriodoType;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.DetalleCarteraAfiliadoPeriodo;
 import gs.hexagonaldemo.springhexagonaldemo.utils.ParametrosUSConstantes;
 
 import java.time.LocalDateTime;
@@ -80,25 +80,25 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSUtil {
 		
 	}
 
-	public static List<RespuestaCarteraAfiliadoType> generarRespuestaPorSeguro(Short seguroId, Short regimenId, List<DetalleCarteraAfiliadoPeriodoType> detallesCartera) {
+	public static List<RespuestaCarteraAfiliado> generarRespuestaPorSeguro(Short seguroId, Short regimenId, List<DetalleCarteraAfiliadoPeriodo> detallesCartera) {
 		if (detallesCartera == null) {
 			return Collections.emptyList();
 		}
 		
-		List<RespuestaCarteraAfiliadoType> respuestaCartera = new ArrayList<>();		
-		for (DetalleCarteraAfiliadoPeriodoType detalle : detallesCartera) {
+		List<RespuestaCarteraAfiliado> respuestaCartera = new ArrayList<>();
+		for (DetalleCarteraAfiliadoPeriodo detalle : detallesCartera) {
 			respuestaCartera.add(crearRespuestaCartera(seguroId,regimenId, detalle));		
 		}		
 		return respuestaCartera;
 	}
 
-	public static RespuestaCarteraAfiliadoType crearRespuestaCartera(Short seguroId,Short regimenId, DetalleCarteraAfiliadoPeriodoType detalle) {
-		RespuestaCarteraAfiliadoType respuesta = inicializarRespuestaCartera(seguroId, regimenId,detalle);
+	public static RespuestaCarteraAfiliado crearRespuestaCartera(Short seguroId,Short regimenId, DetalleCarteraAfiliadoPeriodo detalle) {
+		RespuestaCarteraAfiliado respuesta = inicializarRespuestaCartera(seguroId, regimenId,detalle);
 		return completarRespuestaCartera(seguroId,regimenId, respuesta, detalle); 
 	}
 
-	public static RespuestaCarteraAfiliadoType inicializarRespuestaCartera(Short seguroId,Short regimenId, DetalleCarteraAfiliadoPeriodoType detalle) {		
-		RespuestaCarteraAfiliadoType respuesta = obtenerInstanciaPorSeguro(seguroId,regimenId);		
+	public static RespuestaCarteraAfiliado inicializarRespuestaCartera(Short seguroId,Short regimenId, DetalleCarteraAfiliadoPeriodo detalle) {
+		RespuestaCarteraAfiliado respuesta = obtenerInstanciaPorSeguro(seguroId,regimenId);
 		respuesta.setSolicitudId(detalle.getSolicitudId());
 		respuesta.setNss(detalle.getNss());
 		respuesta.setNombre(detalle.getNombre());
@@ -108,25 +108,25 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSUtil {
 		return respuesta;
 	}
 
-	public static RespuestaCarteraAfiliadoType completarRespuestaCartera(Short seguroId,Short regimenId, RespuestaCarteraAfiliadoType respuesta, DetalleCarteraAfiliadoPeriodoType detalle) {
+	public static RespuestaCarteraAfiliado completarRespuestaCartera(Short seguroId, Short regimenId, RespuestaCarteraAfiliado respuesta, DetalleCarteraAfiliadoPeriodo detalle) {
 		switch (seguroId) {
 			case ParametrosUSConstantes.Seguros.ID_SEGURO_DE_PENSIONES:
-				return completarRespuestaCartera((RespuestaCarteraAfiliadoAFPType) respuesta, detalle);
+				return completarRespuestaCartera((RespuestaCarteraAfiliadoAFP) respuesta, detalle);
 			case ParametrosUSConstantes.Seguros.ID_SEGURO_DE_SALUD:
 				if (regimenId.equals(ParametrosUSConstantes.Regimenes.CONTRIBUTIVO)) {
-					return completarRespuestaCartera((RespuestaCarteraAfiliadoARSContributivoType) respuesta, detalle);
+					return completarRespuestaCartera((RespuestaCarteraAfiliadoARSContributivo) respuesta, detalle);
 				}else if (regimenId.equals(ParametrosUSConstantes.Regimenes.SUBSIDIADO)) {
-					return completarRespuestaCartera((RespuestaCarteraAfiliadoARSSubsidiadoType) respuesta, detalle);
+					return completarRespuestaCartera((RespuestaCarteraAfiliadoARSSubsidiado) respuesta, detalle);
 				}else if(regimenId.equals(ParametrosUSConstantes.Regimenes.PENSIONADOS)){
-					return completarRespuestaCartera((RespuestaCarteraAfiliadoARSPensionadosType) respuesta, detalle);
+					return completarRespuestaCartera((RespuestaCarteraAfiliadoARSPensionados) respuesta, detalle);
 				}
 			case ParametrosUSConstantes.Seguros.ID_SEGURO_DE_ESTANCIAS_INFANTILES:
-				return completarRespuestaCartera((RespuestaCarteraAfiliadoAEISSType) respuesta, detalle);
+				return completarRespuestaCartera((RespuestaCarteraAfiliadoAEISS) respuesta, detalle);
 		}		
 		return respuesta;
 	}
 
-	public static RespuestaCarteraAfiliadoType completarRespuestaCartera(RespuestaCarteraAfiliadoAFPType respuesta, DetalleCarteraAfiliadoPeriodoType detalle) {
+	public static RespuestaCarteraAfiliado completarRespuestaCartera(RespuestaCarteraAfiliadoAFP respuesta, DetalleCarteraAfiliadoPeriodo detalle) {
 		respuesta.setCedula(detalle.getCedula());
 		respuesta.setNumeroContrato(detalle.getNumeroContrato());
 		respuesta.setFechaNacimiento(detalle.getFechaNacimiento());
@@ -134,7 +134,7 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSUtil {
 		return respuesta;
 	}
 
-	public static RespuestaCarteraAfiliadoType completarRespuestaCartera(RespuestaCarteraAfiliadoARSContributivoType respuesta, DetalleCarteraAfiliadoPeriodoType detalle) {
+	public static RespuestaCarteraAfiliado completarRespuestaCartera(RespuestaCarteraAfiliadoARSContributivo respuesta, DetalleCarteraAfiliadoPeriodo detalle) {
 		respuesta.setTipoAfiliado(detalle.getTipoAfiliado());
 		respuesta.setTipoDependiente(detalle.getTipoDependiente());
 		respuesta.setParentescoId(detalle.getParentescoId());
@@ -155,7 +155,7 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSUtil {
 		return respuesta;
 	}
 
-	public static RespuestaCarteraAfiliadoType completarRespuestaCartera(RespuestaCarteraAfiliadoAEISSType respuesta, DetalleCarteraAfiliadoPeriodoType detalle) {
+	public static RespuestaCarteraAfiliado completarRespuestaCartera(RespuestaCarteraAfiliadoAEISS respuesta, DetalleCarteraAfiliadoPeriodo detalle) {
 		respuesta.setTipoDependiente(detalle.getTipoDependiente());
 		respuesta.setParentescoId(detalle.getParentescoId());
 		respuesta.setNui(detalle.getNui());
@@ -171,7 +171,7 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSUtil {
 		return respuesta;
 	}
 
-	public static RespuestaCarteraAfiliadoType completarRespuestaCartera(RespuestaCarteraAfiliadoARSSubsidiadoType respuesta, DetalleCarteraAfiliadoPeriodoType detalle) {
+	public static RespuestaCarteraAfiliado completarRespuestaCartera(RespuestaCarteraAfiliadoARSSubsidiado respuesta, DetalleCarteraAfiliadoPeriodo detalle) {
 		respuesta.setTipoAfiliado(detalle.getTipoAfiliado());
 		respuesta.setTipoDependiente(detalle.getTipoDependiente());
 		respuesta.setParentescoId(detalle.getParentescoId());
@@ -191,7 +191,7 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSUtil {
 		return respuesta;
 	}
 
-	public static RespuestaCarteraAfiliadoType completarRespuestaCartera(RespuestaCarteraAfiliadoARSPensionadosType respuesta, DetalleCarteraAfiliadoPeriodoType detalle) {
+	public static RespuestaCarteraAfiliado completarRespuestaCartera(RespuestaCarteraAfiliadoARSPensionados respuesta, DetalleCarteraAfiliadoPeriodo detalle) {
 		respuesta.setTipoAfiliado(detalle.getTipoAfiliado());
 		respuesta.setTipoDependiente(detalle.getTipoDependiente());
 		respuesta.setParentescoId(detalle.getParentescoId());
@@ -212,19 +212,19 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSUtil {
 		return respuesta;
 	}
 
-	public static RespuestaCarteraAfiliadoType obtenerInstanciaPorSeguro(Short seguroId,Short regimenId) {
+	public static RespuestaCarteraAfiliado obtenerInstanciaPorSeguro(Short seguroId,Short regimenId) {
 		switch (seguroId) {
 			case ParametrosUSConstantes.Seguros.ID_SEGURO_DE_PENSIONES:
-				return new RespuestaCarteraAfiliadoAFPType();
+				return new RespuestaCarteraAfiliadoAFP();
 			case ParametrosUSConstantes.Seguros.ID_SEGURO_DE_SALUD:
 				if (regimenId.equals(ParametrosUSConstantes.Regimenes.CONTRIBUTIVO)) {
-					return new RespuestaCarteraAfiliadoARSContributivoType();
+					return new RespuestaCarteraAfiliadoARSContributivo();
 				}else if (regimenId.equals(ParametrosUSConstantes.Regimenes.SUBSIDIADO)) {
-					return new RespuestaCarteraAfiliadoARSSubsidiadoType();
+					return new RespuestaCarteraAfiliadoARSSubsidiado();
 				}
-				return new RespuestaCarteraAfiliadoARSPensionadosType();
+				return new RespuestaCarteraAfiliadoARSPensionados();
 			case ParametrosUSConstantes.Seguros.ID_SEGURO_DE_ESTANCIAS_INFANTILES:
-				return new RespuestaCarteraAfiliadoAEISSType();
+				return new RespuestaCarteraAfiliadoAEISS();
 		}
 		return null;
 	}

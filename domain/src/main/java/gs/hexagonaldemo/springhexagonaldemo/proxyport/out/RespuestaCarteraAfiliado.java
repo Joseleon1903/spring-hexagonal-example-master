@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class RespuestaCarteraAfiliadoType {
+public class RespuestaCarteraAfiliado {
 
     protected long solicitudId;
     protected Integer nss;

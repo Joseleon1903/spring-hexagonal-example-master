@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ConsultarCarteraAfiliadoPorPeriodoType {
+public class ConsultarCarteraAfiliadoPorPeriodo {
 
 
     protected Integer periodo;

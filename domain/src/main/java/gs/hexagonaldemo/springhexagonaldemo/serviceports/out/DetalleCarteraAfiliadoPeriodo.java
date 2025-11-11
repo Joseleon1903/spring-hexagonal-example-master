@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class DetalleCarteraAfiliadoPeriodoType {
+public class DetalleCarteraAfiliadoPeriodo {
 
     protected long detalleCarteraAfiliadoId;
     protected Long afiliacionId;

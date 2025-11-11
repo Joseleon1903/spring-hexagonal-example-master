@@ -1,6 +1,6 @@
 package com.unipago.suirsigma.afiliacion.services.tasks.adapter.out;
 
-import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.RespuestaCarteraAfiliadoType;
+import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.RespuestaCarteraAfiliado;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.ActaNacimientoType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class RespuestaCarteraAfiliadoARSSubsidiadoType  extends RespuestaCarteraAfiliadoType {
+public class RespuestaCarteraAfiliadoARSPensionados extends RespuestaCarteraAfiliado {
 
     private LocalDate fechaNacimiento;
     private String genero;
@@ -25,6 +25,7 @@ public class RespuestaCarteraAfiliadoARSSubsidiadoType  extends RespuestaCartera
     private Integer nssTitular;
     private String cedulaTitular;
     private Long numeroContrato;
+    private Short institucionPensionadoId;
     private Boolean estudiante;
     private Boolean discapacitado;
     private LocalDate fechaRecepcionSolicitudAfiliacion;

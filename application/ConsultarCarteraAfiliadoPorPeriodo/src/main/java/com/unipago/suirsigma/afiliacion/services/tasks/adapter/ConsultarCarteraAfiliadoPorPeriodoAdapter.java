@@ -2,8 +2,8 @@ package com.unipago.suirsigma.afiliacion.services.tasks.adapter;
 
 import com.unipago.suirsigma.afiliacion.services.tasks.impl.ConsultarCarteraAfiliadoPorPeriodoTSImpl;
 import gs.hexagonaldemo.springhexagonaldemo.proxyport.ConsultarCarteraAfiliadoPorPeriodoPort;
-import gs.hexagonaldemo.springhexagonaldemo.proxyport.in.ConsultarCarteraAfiliadoPorPeriodoType;
-import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.ConsultarCarteraAfiliadoPorPeriodoResponseType;
+import gs.hexagonaldemo.springhexagonaldemo.proxyport.in.ConsultarCarteraAfiliadoPorPeriodo;
+import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.ConsultarCarteraAfiliadoPorPeriodoResponse;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -32,14 +32,14 @@ public class ConsultarCarteraAfiliadoPorPeriodoAdapter implements ConsultarCarte
 
 
     @Override
-    public ConsultarCarteraAfiliadoPorPeriodoResponseType consultarCarteraAfiliadoPorPeriodo(ConsultarCarteraAfiliadoPorPeriodoType consultarCarteraAfiliadoPorPeriodoInput) {
+    public ConsultarCarteraAfiliadoPorPeriodoResponse consultarCarteraAfiliadoPorPeriodo(ConsultarCarteraAfiliadoPorPeriodo consultarCarteraAfiliadoPorPeriodoInput) {
         System.out.println("Entering in consultarCarteraAfiliadoPorPeriodo");
         System.out.println("consultarCarteraAfiliadoPorPeriodoInput: "+consultarCarteraAfiliadoPorPeriodoInput);
 
         ConsultarCarteraAfiliadoPorPeriodoTSImpl consultarCarteraAfiliadoPorPeriodoTS = new ConsultarCarteraAfiliadoPorPeriodoTSImpl(tipoEntidadES, carteraAfiliadoES,  contactoES,
                 ejecucionConsultaES,  parametroES,  usuarioES );
         System.out.println("procesando consulta..");
-        ConsultarCarteraAfiliadoPorPeriodoResponseType response = consultarCarteraAfiliadoPorPeriodoTS.consultarCarteraAfiliadoPorPeriodo(consultarCarteraAfiliadoPorPeriodoInput);
+        ConsultarCarteraAfiliadoPorPeriodoResponse response = consultarCarteraAfiliadoPorPeriodoTS.consultarCarteraAfiliadoPorPeriodo(consultarCarteraAfiliadoPorPeriodoInput);
         System.out.println("terminando consulta..");
         return response;
     }

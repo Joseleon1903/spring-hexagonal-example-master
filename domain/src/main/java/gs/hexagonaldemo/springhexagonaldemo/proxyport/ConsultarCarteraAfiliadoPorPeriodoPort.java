@@ -1,8 +1,8 @@
 package gs.hexagonaldemo.springhexagonaldemo.proxyport;
 
 
-import gs.hexagonaldemo.springhexagonaldemo.proxyport.in.ConsultarCarteraAfiliadoPorPeriodoType;
-import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.ConsultarCarteraAfiliadoPorPeriodoResponseType;
+import gs.hexagonaldemo.springhexagonaldemo.proxyport.in.ConsultarCarteraAfiliadoPorPeriodo;
+import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.ConsultarCarteraAfiliadoPorPeriodoResponse;
 
 /**
  *
@@ -38,6 +38,6 @@ public interface ConsultarCarteraAfiliadoPorPeriodoPort {
      * @param consultarCarteraAfiliadoPorPeriodoInput
      * @return
      */
-    ConsultarCarteraAfiliadoPorPeriodoResponseType consultarCarteraAfiliadoPorPeriodo(ConsultarCarteraAfiliadoPorPeriodoType consultarCarteraAfiliadoPorPeriodoInput);
+    ConsultarCarteraAfiliadoPorPeriodoResponse consultarCarteraAfiliadoPorPeriodo(ConsultarCarteraAfiliadoPorPeriodo consultarCarteraAfiliadoPorPeriodoInput);
 
 }
