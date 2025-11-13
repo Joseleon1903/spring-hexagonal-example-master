@@ -81,7 +81,7 @@ public class CarteraAfiliadoRepositoryAdapter implements CarteraAfiliadoReposito
                     row.put("CEDULA_TITULAR", rs.getString("CEDULA_TITULAR"));
                     row.put("NUMERO_CONTRATO", rs.getString("NUMERO_CONTRATO"));
 
-
+                    row.put("FECHA_EFECTIVIDAD_AFILIACION", rs.getDate("FECHA_EFECTIVIDAD_AFILIACION"));
                     return row;
                 });
     }
@@ -171,8 +171,9 @@ public class CarteraAfiliadoRepositoryAdapter implements CarteraAfiliadoReposito
             detalle.setPrimerApellido(DaoUtil.getStringColumn(res,"PRIMER_APELLIDO" ));
             detalle.setEstadoAfiliacion(DaoUtil.getStringColumn(res, "ESTADO_AFILIACION"));
             detalle.setFechaNacimiento(DaoUtil.getLocalDate(res, "FECHA_NACIMIENTO"));
+            detalle.setFechaEfectividadAfiliacion(DaoUtil.getLocalDate(res, "FECHA_EFECTIVIDAD_AFILIACION"));
             respuesta.add(detalle);
         });
-        return new BuscarCarteraAfiliadosPorEntidadPeriodoResponse(respuesta,paginacion );
+        return new BuscarCarteraAfiliadosPorEntidadPeriodoResponse(respuesta,paginacion);
     }
 }

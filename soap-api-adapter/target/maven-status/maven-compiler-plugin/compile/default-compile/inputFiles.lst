@@ -1,10 +1,12 @@
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\soap-api-adapter\src\main\java\com\howtodoinjava\xml\school\ConsultarCarteraAfiliadoPorPeriodoType.java
 C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\soap-api-adapter\src\main\java\com\howtodoinjava\xml\school\ObjectFactory.java
 C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\soap-api-adapter\src\main\java\com\howtodoinjava\xml\school\package-info.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\soap-api-adapter\src\main\java\com\howtodoinjava\xml\school\RespuestaCarteraAfiliadoType.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\soap-api-adapter\src\main\java\com\howtodoinjava\xml\school\RespuestaPaginacionType.java
 C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\soap-api-adapter\src\main\java\com\howtodoinjava\xml\school\Student.java
 C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\soap-api-adapter\src\main\java\com\howtodoinjava\xml\school\StudentDetailsRequest.java
 C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\soap-api-adapter\src\main\java\com\howtodoinjava\xml\school\StudentDetailsResponse.java
 C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\soap-api-adapter\src\main\java\com\soap\api\adapter\config\SoapContractConfig.java
-C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\soap-api-adapter\src\main\java\com\soap\api\adapter\endpoints\ConsultaCarteraEndpoint.java
 C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\soap-api-adapter\src\main\java\com\soap\api\adapter\endpoints\StudentEndpoint.java
 C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\soap-api-adapter\src\main\java\com\soap\api\adapter\utils\XMLConversionUtil.java
 C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\soap-api-adapter\src\main\java\com\unisigma\epbd\consultarcarteraafiliadoperiodo\ConsultarCarteraAfiliadoPorPeriodoResponseType.java

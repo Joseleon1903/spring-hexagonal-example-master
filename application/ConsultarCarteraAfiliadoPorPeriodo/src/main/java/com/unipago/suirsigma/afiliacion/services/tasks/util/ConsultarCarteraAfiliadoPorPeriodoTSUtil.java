@@ -82,6 +82,12 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSUtil {
 	}
 
 	public static List<RespuestaCarteraAfiliado> generarRespuestaPorSeguro(Short seguroId, Short regimenId, List<DetalleCarteraAfiliadoPeriodo> detallesCartera) {
+
+		System.out.println("Generar respuesta seguro");
+		System.out.println("seguroId: "+seguroId);
+		System.out.println("regimenId: "+regimenId);
+		System.out.println("detallesCartera: "+detallesCartera);
+
 		if (detallesCartera == null) {
 			return Collections.emptyList();
 		}
@@ -105,7 +111,8 @@ public class ConsultarCarteraAfiliadoPorPeriodoTSUtil {
 		respuesta.setNombre(detalle.getNombre());
 		respuesta.setPrimerApellido(detalle.getPrimerApellido());
 		respuesta.setEstadoAfiliacion(detalle.getEstadoAfiliacion());
-		respuesta.setMotivoEstadoId(detalle.getMotivoEstadoId());		
+		respuesta.setMotivoEstadoId(detalle.getMotivoEstadoId());
+		respuesta.setFechaEfectividadAfiliacion(detalle.getFechaEfectividadAfiliacion());
 		return respuesta;
 	}
 
