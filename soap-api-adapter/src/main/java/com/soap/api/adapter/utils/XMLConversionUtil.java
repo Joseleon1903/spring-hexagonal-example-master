@@ -1,8 +1,9 @@
 package com.soap.api.adapter.utils;
 
-import com.howtodoinjava.xml.school.RespuestaCarteraAfiliadoType;
-import com.howtodoinjava.xml.school.RespuestaPaginacionType;
-import com.howtodoinjava.xml.school.StudentDetailsResponse;
+
+import com.unisigma.epbd.consultarcarteraafiliadoperiodo.ConsultarCarteraAfiliadoPorPeriodoOutput;
+import com.unisigma.epbd.consultarcarteraafiliadoperiodo.RespuestaCarteraAfiliadoType;
+import com.unisigma.epbd.consultarcarteraafiliadoperiodo.RespuestaPaginacionType;
 import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.ConsultarCarteraAfiliadoPorPeriodoResponse;
 
 import javax.xml.datatype.DatatypeFactory;
@@ -15,9 +16,9 @@ import java.util.List;
 
 public class XMLConversionUtil {
 
-    public static StudentDetailsResponse crearResponse(ConsultarCarteraAfiliadoPorPeriodoResponse response){
+    public static ConsultarCarteraAfiliadoPorPeriodoOutput crearResponse(ConsultarCarteraAfiliadoPorPeriodoResponse response){
 
-        StudentDetailsResponse type = new StudentDetailsResponse();
+        ConsultarCarteraAfiliadoPorPeriodoOutput type = new ConsultarCarteraAfiliadoPorPeriodoOutput();
         RespuestaPaginacionType paginacion =  new RespuestaPaginacionType();
         paginacion.setIndice(response.getRegistrosRestantes().getIndice());
         paginacion.setRegistrosRestantes(response.getRegistrosRestantes().getRegistrosRestantes());

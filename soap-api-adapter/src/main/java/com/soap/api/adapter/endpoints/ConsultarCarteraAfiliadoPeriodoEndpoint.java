@@ -1,9 +1,9 @@
 package com.soap.api.adapter.endpoints;
 
 
-import com.howtodoinjava.xml.school.StudentDetailsRequest;
-import com.howtodoinjava.xml.school.StudentDetailsResponse;
 import com.soap.api.adapter.utils.XMLConversionUtil;
+import com.unisigma.epbd.consultarcarteraafiliadoperiodo.ConsultarCarteraAfiliadoPorPeriodoOutput;
+import com.unisigma.epbd.consultarcarteraafiliadoperiodo.ConsultarCarteraAfiliadoPorPeriodoRequest;
 import gs.hexagonaldemo.springhexagonaldemo.proxyport.ConsultarCarteraAfiliadoPorPeriodoPort;
 import gs.hexagonaldemo.springhexagonaldemo.proxyport.in.ConsultarCarteraAfiliadoPorPeriodo;
 import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.ConsultarCarteraAfiliadoPorPeriodoResponse;
@@ -14,21 +14,21 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 @Endpoint
-public class StudentEndpoint {
+public class ConsultarCarteraAfiliadoPeriodoEndpoint {
 
-    private static final String NAMESPACE_URI = "http://www.howtodoinjava.com/xml/school";
+    private static final String NAMESPACE_URI = "http://www.unisigma.com/epbd/ConsultarCarteraAfiliadoPeriodo";
 
     private final ConsultarCarteraAfiliadoPorPeriodoPort consultarCarteraAfiliadoPorPeriodoPort;
 
     @Autowired
-    public StudentEndpoint(ConsultarCarteraAfiliadoPorPeriodoPort consultarCarteraAfiliadoPorPeriodoPort) {
+    public ConsultarCarteraAfiliadoPeriodoEndpoint(ConsultarCarteraAfiliadoPorPeriodoPort consultarCarteraAfiliadoPorPeriodoPort) {
         this.consultarCarteraAfiliadoPorPeriodoPort = consultarCarteraAfiliadoPorPeriodoPort;
     }
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "StudentDetailsRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "ConsultarCarteraAfiliadoPorPeriodoRequest")
     @ResponsePayload
-    public StudentDetailsResponse getStudent(@RequestPayload StudentDetailsRequest request) {
-        StudentDetailsResponse response = new StudentDetailsResponse();
+    public ConsultarCarteraAfiliadoPorPeriodoOutput consultarCarteraAfiliadoPorPeriodoResponse(@RequestPayload ConsultarCarteraAfiliadoPorPeriodoRequest request) {
+        ConsultarCarteraAfiliadoPorPeriodoOutput response = new ConsultarCarteraAfiliadoPorPeriodoOutput();
         ConsultarCarteraAfiliadoPorPeriodo input = new ConsultarCarteraAfiliadoPorPeriodo();
         input.setIndice(request.getIndice());
         input.setEstadoAfiliacion(request.getEstadoAfiliacion());

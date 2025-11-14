@@ -19,22 +19,22 @@ public class SoapContractConfig extends WsConfigurerAdapter{
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(applicationContext);
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean(servlet, "/service/*");
+        return new ServletRegistrationBean(servlet, "/servicio/*");
     }
 
-    @Bean(name = "studentDetailsWsdl")
+    @Bean(name = "consultarCarteraAfiliadoPeriodo")
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema studentSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-        wsdl11Definition.setPortTypeName("StudentDetailsPort");
-        wsdl11Definition.setLocationUri("/service/student-details");
-        wsdl11Definition.setTargetNamespace("http://www.howtodoinjava.com/xml/school");
+        wsdl11Definition.setPortTypeName("ConsultarCarteraAfiliadoPeriodoPort");
+        wsdl11Definition.setLocationUri("/servicio/consultarCarteraAfiliadoPeriodo");
+        wsdl11Definition.setTargetNamespace("http://www.unisigma.com/epbd/ConsultarCarteraAfiliadoPeriodo");
         wsdl11Definition.setSchema(studentSchema);
         return wsdl11Definition;
     }
 
     @Bean
     public XsdSchema studentSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("student.xsd"));
+        return new SimpleXsdSchema(new ClassPathResource("ConsultarCarteraAfiliadoPeriodoService.xsd"));
     }
 
 }
