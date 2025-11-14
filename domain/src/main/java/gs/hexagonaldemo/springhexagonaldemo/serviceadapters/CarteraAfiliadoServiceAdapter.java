@@ -3,7 +3,7 @@ package gs.hexagonaldemo.springhexagonaldemo.serviceadapters;
 import gs.hexagonaldemo.springhexagonaldemo.models.CarteraAfiliado;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.CarteraAfiliadoES;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.CarteraAfiliadoRepository;
-import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.BuscarCarteraAfiliadosPorEntidadPeriodoResponseType;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.BuscarCarteraAfiliadosPorEntidadPeriodoResponse;
 
 import java.util.Optional;
 
@@ -26,7 +26,7 @@ public class CarteraAfiliadoServiceAdapter implements CarteraAfiliadoES {
     }
 
     @Override
-    public BuscarCarteraAfiliadosPorEntidadPeriodoResponseType buscarCarteraAfiliadosPorEntidadPeriodo(Integer entidadId, Integer periodo, String estadoAfiliacion, Integer indice, Integer cantidadRegistrosParticion) {
+    public BuscarCarteraAfiliadosPorEntidadPeriodoResponse buscarCarteraAfiliadosPorEntidadPeriodo(Integer entidadId, Integer periodo, String estadoAfiliacion, Integer indice, Integer cantidadRegistrosParticion) {
         return carteraAfiliadoRepository.buscarCarteraAfiliadosPorEntidadPeriodo(entidadId, periodo, estadoAfiliacion, indice,cantidadRegistrosParticion);
     }
 }

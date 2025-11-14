@@ -1,0 +1,16 @@
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\impl\ServiciosContext.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\reglas\AbstractReglasIntercambioInformacion.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\util\ControladorProcesos.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\impl\PublicarInformacionTS.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\reglas\ReglasPublicarInformacion.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\util\PublicarInformacionFactory.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\local\IControlador.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\local\IReglasIntercambioInformacion.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\impl\PublicarInformacionTSImpl.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\adapter\PublicarInformacionServicePortAdapter.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\proceso\AbstractProcess.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\proceso\SolicitudIntercambioInformacion.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\proceso\ContextData.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\util\Proceso.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\local\IProceso.java
+C:\Users\josel\IdeaProjects\spring-hexagonal-example-master\application\PublicarInformacion\src\main\java\com\unipago\unisigma\usecase\tasks\proceso\ProcesoPublicarInformacion.java

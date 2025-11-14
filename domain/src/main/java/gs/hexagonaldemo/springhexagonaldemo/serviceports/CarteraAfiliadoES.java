@@ -1,7 +1,7 @@
 package gs.hexagonaldemo.springhexagonaldemo.serviceports;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.CarteraAfiliado;
-import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.BuscarCarteraAfiliadosPorEntidadPeriodoResponseType;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.BuscarCarteraAfiliadosPorEntidadPeriodoResponse;
 
 import java.util.Optional;
 
@@ -39,8 +39,8 @@ public interface CarteraAfiliadoES {
      * del rango correspondiente al �ndice especificado como par�metro.
      *
      */
-    BuscarCarteraAfiliadosPorEntidadPeriodoResponseType buscarCarteraAfiliadosPorEntidadPeriodo(Integer entidadId, Integer periodo, String estadoAfiliacion,
-                                                                                                Integer indice, Integer cantidadRegistrosParticion);
+    BuscarCarteraAfiliadosPorEntidadPeriodoResponse buscarCarteraAfiliadosPorEntidadPeriodo(Integer entidadId, Integer periodo, String estadoAfiliacion,
+                                                                                            Integer indice, Integer cantidadRegistrosParticion);
 
 
 }

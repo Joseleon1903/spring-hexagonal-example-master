@@ -1,10 +1,10 @@
 package hexagonaldemo.adapters;
 
 import gs.hexagonaldemo.springhexagonaldemo.models.CarteraAfiliado;
-import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.RespuestaPaginacionType;
+import gs.hexagonaldemo.springhexagonaldemo.proxyport.out.RespuestaPaginacion;
 import gs.hexagonaldemo.springhexagonaldemo.serviceports.CarteraAfiliadoRepository;
-import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.BuscarCarteraAfiliadosPorEntidadPeriodoResponseType;
-import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.DetalleCarteraAfiliadoPeriodoType;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.BuscarCarteraAfiliadosPorEntidadPeriodoResponse;
+import gs.hexagonaldemo.springhexagonaldemo.serviceports.out.DetalleCarteraAfiliadoPeriodo;
 import hexagonaldemo.entity.CarteraAfiliadoEntity;
 import hexagonaldemo.entity.DetalleCarteraAfiliadoEntity;
 import hexagonaldemo.mapper.CarteraAfiliadoMapper;
@@ -81,7 +81,7 @@ public class CarteraAfiliadoRepositoryAdapter implements CarteraAfiliadoReposito
                     row.put("CEDULA_TITULAR", rs.getString("CEDULA_TITULAR"));
                     row.put("NUMERO_CONTRATO", rs.getString("NUMERO_CONTRATO"));
 
-
+                    row.put("FECHA_EFECTIVIDAD_AFILIACION", rs.getDate("FECHA_EFECTIVIDAD_AFILIACION"));
                     return row;
                 });
     }
@@ -137,20 +137,20 @@ public class CarteraAfiliadoRepositoryAdapter implements CarteraAfiliadoReposito
     }
 
     @Override
-    public BuscarCarteraAfiliadosPorEntidadPeriodoResponseType buscarCarteraAfiliadosPorEntidadPeriodo(Integer entidadId, Integer periodo, String estadoAfiliacion, Integer indice, Integer cantidadRegistrosParticion) {
+    public BuscarCarteraAfiliadosPorEntidadPeriodoResponse buscarCarteraAfiliadosPorEntidadPeriodo(Integer entidadId, Integer periodo, String estadoAfiliacion, Integer indice, Integer cantidadRegistrosParticion) {
 
         List<Map<String, Object>> resulset =   buscarCarteraAfiPeriodo(periodo,entidadId,  estadoAfiliacion,  indice,  cantidadRegistrosParticion);
 
-        List<DetalleCarteraAfiliadoPeriodoType> respuesta= new ArrayList<>();
+        List<DetalleCarteraAfiliadoPeriodo> respuesta= new ArrayList<>();
 
-        RespuestaPaginacionType paginacion = new RespuestaPaginacionType();
+        RespuestaPaginacion paginacion = new RespuestaPaginacion();
 
         resulset.forEach( res ->{
 
             paginacion.setIndice(Integer.parseInt(res.get("PAGINA_ACTUAL").toString()));
             paginacion.setRegistrosRestantes(Long.parseLong(res.get("REGISTROS_RESTANTES").toString()));
 
-            DetalleCarteraAfiliadoPeriodoType detalle =  new DetalleCarteraAfiliadoPeriodoType();
+            DetalleCarteraAfiliadoPeriodo detalle =  new DetalleCarteraAfiliadoPeriodo();
             detalle.setDetalleCarteraAfiliadoId(Long.parseLong(res.get("DETALLE_CARTERA_AFILIADO_ID").toString()));
             detalle.setSolicitudId(Long.parseLong(res.get("SOLICITUD_ID").toString()));
             detalle.setAfiliacionId(Long.parseLong(res.get("AFILIACION_ID").toString()));
@@ -171,8 +171,9 @@ public class CarteraAfiliadoRepositoryAdapter implements CarteraAfiliadoReposito
             detalle.setPrimerApellido(DaoUtil.getStringColumn(res,"PRIMER_APELLIDO" ));
             detalle.setEstadoAfiliacion(DaoUtil.getStringColumn(res, "ESTADO_AFILIACION"));
             detalle.setFechaNacimiento(DaoUtil.getLocalDate(res, "FECHA_NACIMIENTO"));
+            detalle.setFechaEfectividadAfiliacion(DaoUtil.getLocalDate(res, "FECHA_EFECTIVIDAD_AFILIACION"));
             respuesta.add(detalle);
         });
-        return new BuscarCarteraAfiliadosPorEntidadPeriodoResponseType(respuesta,paginacion );
+        return new BuscarCarteraAfiliadosPorEntidadPeriodoResponse(respuesta,paginacion);
     }
 }

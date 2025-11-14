@@ -67,7 +67,19 @@
             <scope>compile</scope>
         </dependency>
 
+        <dependency>
+            <groupId>gs.hexagonaldemo</groupId>
+            <artifactId>UnisigmaRabbitMq</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
 
+        <dependency>
+            <groupId>gs.hexagonaldemo</groupId>
+            <artifactId>domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>gs.hexagonaldemo</groupId>
             <artifactId>PublicarInformacion</artifactId>
@@ -76,15 +88,19 @@
         </dependency>
         <dependency>
             <groupId>gs.hexagonaldemo</groupId>
-            <artifactId>UnisigmaRabbitMq</artifactId>
+            <artifactId>ConsultarCarteraAfiliadoPorPeriodo</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>gs.hexagonaldemo</groupId>
-            <artifactId>ConsultarCarteraAfiliadoPorPeriodo</artifactId>
+            <artifactId>soap-api-adapter</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
         </dependency>
     </dependencies>
 

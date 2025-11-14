@@ -1,0 +1,10 @@
+com\howtodoinjava\xml\school\RespuestaCarteraAfiliadoType.class
+com\howtodoinjava\xml\school\StudentDetailsRequest.class
+com\howtodoinjava\xml\school\StudentDetailsResponse.class
+com\unisigma\epbd\consultarcarteraafiliadoperiodo\package-info.class
+com\soap\api\adapter\config\SoapContractConfig.class
+com\howtodoinjava\xml\school\ConsultarCarteraAfiliadoPorPeriodoType.class
+com\howtodoinjava\xml\school\Student.class
+com\howtodoinjava\xml\school\package-info.class
+com\howtodoinjava\xml\school\ObjectFactory.class
+com\howtodoinjava\xml\school\RespuestaPaginacionType.class

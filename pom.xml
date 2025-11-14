@@ -26,13 +26,16 @@
 
 	<modules>
 		<module>domain</module>
-		<module>rest-api-adapter</module>
 		<module>application</module>
+		<module>application/PublicarInformacion</module>
+		<module>application/ConsultarCarteraAfiliadoPorPeriodo</module>
+
+
 		<module>Infrastructure</module>
         <module>Infrastructure/OracleDataBase</module>
-        <module>PublicarInformacion</module>
+		<module>Infrastructure/rest-api-adapter</module>
+
 		<module>Infrastructure/UnisigmaRabbitMq</module>
-        <module>ConsultarCarteraAfiliadoPorPeriodo</module>
     </modules>
 
 </project>
