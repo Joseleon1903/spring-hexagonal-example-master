@@ -12,7 +12,7 @@
     </parent>
 
     <groupId>gs.hexagonaldemo</groupId>
-    <artifactId>rest-api-adapter</artifactId>
+    <artifactId>Rest-api-adapter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 

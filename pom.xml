@@ -31,11 +31,11 @@
 		<module>application/ConsultarCarteraAfiliadoPorPeriodo</module>
 
 
-		<module>Infrastructure</module>
-        <module>Infrastructure/OracleDataBase</module>
-		<module>Infrastructure/rest-api-adapter</module>
+		<module>infrastructure</module>
+        <module>infrastructure/OracleDBAdapter</module>
+		<module>infrastructure/Rest-api-adapter</module>
 
-		<module>Infrastructure/UnisigmaRabbitMq</module>
+		<module>infrastructure/UnisigmaRabbitMqAdapter</module>
     </modules>
 
 </project>
