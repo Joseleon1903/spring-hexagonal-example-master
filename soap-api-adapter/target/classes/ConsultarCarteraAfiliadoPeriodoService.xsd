@@ -1,0 +1,46 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.unisigma.com/epbd/ConsultarCarteraAfiliadoPeriodo"
+           targetNamespace="http://www.unisigma.com/epbd/ConsultarCarteraAfiliadoPeriodo" elementFormDefault="qualified">
+
+  <xs:element name="ConsultarCarteraAfiliadoPorPeriodoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="periodo" type="xs:int" minOccurs="0"/>
+        <xs:element name="estadoAfiliacion" type="xs:string" minOccurs="0"/>
+        <xs:element name="indice" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ConsultarCarteraAfiliadoPorPeriodoOutput">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuestaCarteraAfiliados" type="tns:RespuestaCarteraAfiliadoType"
+                    minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="registrosRestantes" type="tns:RespuestaPaginacionType" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:complexType name="RespuestaCarteraAfiliadoType">
+    <xs:sequence>
+      <xs:element name="solicitudId" type="xs:long"/>
+      <xs:element name="nss" type="xs:int" minOccurs="0"/>
+      <xs:element name="nombre" type="xs:string" minOccurs="0"/>
+      <xs:element name="primerApellido" type="xs:string" minOccurs="0"/>
+      <xs:element name="estadoAfiliacion" type="xs:string" minOccurs="0"/>
+      <xs:element name="motivoEstadoId" type="xs:int" minOccurs="0"/>
+      <xs:element name="fechaEfectividadAfiliacion" type="xs:date" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ========================================================= -->
+  <!-- Tipo de paginación -->
+  <!-- ========================================================= -->
+  <xs:complexType name="RespuestaPaginacionType">
+    <xs:sequence>
+      <xs:element name="indice" type="xs:int" minOccurs="0"/>
+      <xs:element name="registrosRestantes" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
